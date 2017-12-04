@@ -1,7 +1,6 @@
 # Openly
-> Anonymous talk therapy and authorized IRL crisis intervention.
+> This application intends to provide an environment for 1-on-1 talk therapy and crisis intervention between peer users and licensed professionals.  Services are provided to clients in a "freemium" model. 
 
-* This application intends to provide an environment for free, private, 1-on-1 talk therapy between authenticated CLIENTS and verified COUNSELORS, as well as introductory access to professional help provided by COUNSELORS to CLIENTS who are in crisis.
  * My goals in programming this application are as follows:
    * To build a full-stack application using Ruby on Rails. 
    * To incorporate the functionality of anonymous, asynchronous instant messaging between multiple types of users.
