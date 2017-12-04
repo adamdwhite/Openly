@@ -1,19 +1,23 @@
 # Openly
 > Anonymous talk therapy and authorized IRL crisis intervention.
 
-* This application intends to provide an environment for free, private, 1-on-1 talk therapy between authenticated CLIENTS and verified COUNSELORS, as well as introductory access to professional help provided by COUNSELORS to CLIENTS who are in crisis. * My goals in programming this application are as follows: 
-
+* This application intends to provide an environment for free, private, 1-on-1 talk therapy between authenticated CLIENTS and verified COUNSELORS, as well as introductory access to professional help provided by COUNSELORS to CLIENTS who are in crisis.
+ * My goals in programming this application are as follows:
+   * To build a full-stack application using Ruby on Rails. 
+   * To incorporate the functionality of anonymous, asynchronous instant messaging between multiple types of users.
+   * To build and maintain a safe environment to foster improved mental health and provide help for suffering individuals.
+   * To ensure secure confidentiality and security for communication and financial transactions. 
 
 * Diagramming, mockups, and planning hosted on Trello: [https://trello.com/###endpoint]
 
-Table of Contents:
+## Table of Contents:
 * Application Specifications
   * MVP
-    * Stretch Goals
+    * _Stretch Goals_
 * Use Cases / Stories
 * Technology Used
-* Wireframes
-* ERD
+* Wireframes: attachments WIP
+* ERD: WIP link https://drive.google.com/file/d/1k38b-82gyJH1ziC127DMtf_lDkpSbcVB/view?usp=sharing
 
 ## Openly Application Specifications
 
@@ -22,22 +26,27 @@ Table of Contents:
   * Not interact with Registered Users or Openly staff. 
 
 * Registration: 
-  * To authenticate, each user must create a single PROFILE with the following details: 
-    * email address (required)
-    * password (required)
-    * first name (optional)
-    * last name (optional)
+  * To authenticate, all users must create a single PROFILE with the following details (all required): 
+    * email address
+    * password
+    * first name 
+    * last name 
     * CLIENT user_name 
     * city of residence 
     * age 
-    * Application terms of use agreement
-    * CLIENT 
-      * COUNSELOR access account type: 
-      * payment type (optional, for upgraded accounts)
+    * application terms of use agreement 
+
+* ACCOUNTS:
+  
+  * CLIENT Account:
+      * counseling plan (optional) 
+      * payment type (for Counseling plan)
+    
     * CLIENT LISTENER 
       * terms of use agreement
-    * COUNSELOR 
-      * payment type
+      
+  * COUNSELOR Account: 
+      * payment type (to receive payment)
       * terms of use agreement 
       * Contract
       * SSN 
@@ -45,12 +54,12 @@ Table of Contents:
       * license state 
     
 * All Registered Users may:
-  * Update their PROFILE details at any time. 
-  * Exchange text messages with one CLIENT LISTENER at a time, as a CLIENT, free of charge. 
+  * Update their PROFILE details at any time.
+  * Exchange text messages with one CLIENT LISTENER at a time, as a CLIENT, free of charge. 
   * Exchange text messages with one COUNSELOR at a time as CLIENT.
   * Become a CLIENT LISTENER, to receive messages sent from CLIENTS.
   * Apply to become a COUNSELOR. 
-     * User must verify themelves through additional registration via the PROFILE page, and undergo an approval process.   
+     * User must verify themelves through additional registration via the PROFILE / ACCOUNT section, and undergo an approval process.   
   * In summary of the above, there are three types of Registered Users: CLIENTS, CLIENT LISTENERS, and COUNSELORS
   * ADMINISTRATORS are certified moderators of the application and its users' adherence to its terms of use. 
 
@@ -62,10 +71,9 @@ Table of Contents:
     * ADMINISTRATORS may temporarily disable any user's Openly account during the mediation procedure, or permanently as a result of violation(s) of user agreement or contract. 
   * There are "heated" words and terms which will bring each conversation to the attention of an ADMINISTRATOR. The purpose of this is to provide all users with quality counseling, and to protect all users from potential abuse.  
   
-#  
 ## Use Cases: 
 
-* CLIENT Story: 
+# CLIENT Story: 
   * New TALK: 
     * Given a user is authenticated and using the application as a CLIENT 
     * When CLIENT clicks/taps a button to BEGIN a conversation with a CLIENT LISTENER or COUNSELOR
@@ -88,8 +96,7 @@ Table of Contents:
     * When CLIENT enters a PAYMENT TYPE and agrees to the BILLING scenario within the ACCOUNT section
     * Then the CLIENT may begin a TALK with a professional COUNSELOR  
 
-#
-* CLIENT LISTENER Story:
+# CLIENT LISTENER Story:
   * VERIFICATION
     * Given the user is authenticated
     * When user selects the option to become a LISTENER within the ACCOUNT section 
@@ -104,12 +111,18 @@ Table of Contents:
    * End TALK:
      * The CLIENT LISTENER may discontinue the conversation at any point, but must provide a reason why, by way of a message prompt which is then sent to an ADMINISTRATOR.
    
-#  
-* COUNSELOR story: 
+# COUNSELOR story: 
   * VERIFICATION
     * Given the user is authenticated
     * When user selects the option to become a COUNSELOR within the ACCOUNT section 
-    * Then user will be provided with form to enter: SSN, occupation title, license number, license state, sign contract, and counselor terms of use agreement.  
+    * Then user will be provided with form to enter VERIFICATION, and upon submission, an approval process will commence and confirmation will be provided: 
+     * SSN
+     * Occupation title 
+     * License number
+     * License state
+     * Payment type 
+     * Signed contract 
+     * Counselor terms of use agreement.
   
   * New TALK: 
     * Given the user has been VERIFIED as a COUNSELOR
