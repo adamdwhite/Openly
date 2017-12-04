@@ -71,9 +71,9 @@
     * ADMINISTRATORS may temporarily disable any user's Openly account during the mediation procedure, or permanently as a result of violation(s) of user agreement or contract. 
   * There are "heated" words and terms which will bring each conversation to the attention of an ADMINISTRATOR. The purpose of this is to provide all users with quality counseling, and to protect all users from potential abuse.  
   
-## Use Cases: 
+# Use Cases: 
 
-# CLIENT Story: 
+## CLIENT Story: 
   * New TALK: 
     * Given a user is authenticated and using the application as a CLIENT 
     * When CLIENT clicks/taps a button to BEGIN a conversation with a CLIENT LISTENER or COUNSELOR
@@ -96,7 +96,7 @@
     * When CLIENT enters a PAYMENT TYPE and agrees to the BILLING scenario within the ACCOUNT section
     * Then the CLIENT may begin a TALK with a professional COUNSELOR  
 
-# CLIENT LISTENER Story:
+## CLIENT LISTENER Story:
   * VERIFICATION
     * Given the user is authenticated
     * When user selects the option to become a LISTENER within the ACCOUNT section 
@@ -111,7 +111,7 @@
    * End TALK:
      * The CLIENT LISTENER may discontinue the conversation at any point, but must provide a reason why, by way of a message prompt which is then sent to an ADMINISTRATOR.
    
-# COUNSELOR story: 
+## COUNSELOR story: 
   * VERIFICATION
     * Given the user is authenticated
     * When user selects the option to become a COUNSELOR within the ACCOUNT section 
