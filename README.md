@@ -1,10 +1,10 @@
 # Openly
-> This application intends to provide an environment for 1-on-1 talk therapy and crisis intervention between peer users and licensed professionals.  Services are provided to clients in a "freemium" model. 
+> This application intends to provide an environment for 1-on-1 talk therapy and crisis intervention between peer users and licensed professionals.  _Services are provided to clients in a "freemium" model. MVP is a paid subscription, _ 
 
  * My goals in programming this application are as follows:
    * To build a full-stack application using Ruby on Rails. 
-   * To incorporate the functionality of anonymous, asynchronous instant messaging between multiple types of users.
-   * To build and maintain a safe environment to foster improved mental health and provide help for suffering individuals.
+   * To incorporate the functionality of asynchronous instant messaging between _multiple types of_ users.
+   * To build and maintain a safe environment to foster improved mental health and advice for clients seeking help.
    * To ensure secure confidentiality and security for communication and financial transactions. 
 
 * Diagramming, mockups, and planning hosted on Trello: [https://trello.com/###endpoint]
@@ -12,7 +12,7 @@
 ## Table of Contents:
 * Application Specifications
   * MVP
-    * _Stretch Goals_
+    * _Stretch Goals in italics_
 * Use Cases / Stories
 * Technology Used
 * Wireframes: attachments WIP
@@ -29,21 +29,20 @@
     * email address
     * password
     * first name 
-    * last name 
-    * CLIENT user_name 
-    * city of residence 
-    * age 
+    * last name  
     * application terms of use agreement 
 
-* ACCOUNTS:
+* ACCOUNT types:
+  * All of the above is required of both users, plus...
   
   * CLIENT Account:
-      * counseling plan (optional) 
-      * payment type (for Counseling plan)
-    
-    * CLIENT LISTENER 
-      * terms of use agreement
-      
+    * age (why we need this...)
+    * zipcode (why we need this...)
+    * Alias 
+    * CLIENT terms of use agreement 
+    * payment type _(optional in v.2)_
+    * _become a CLIENT LISTENER_ 
+            
   * COUNSELOR Account: 
       * payment type (to receive payment)
       * terms of use agreement 
@@ -51,21 +50,30 @@
       * SSN 
       * occupation title 
       * license state 
-    
+
+  * ADMINISTRATOR Account: 
+    * Certified moderators of the application and its users' adherence to its terms of use. 
+
 * All Registered Users may:
-  * Update their PROFILE details at any time.
-  * Exchange text messages with one CLIENT LISTENER at a time, as a CLIENT, free of charge. 
+  * Update their REGISTRATION details at any time.
   * Exchange text messages with one COUNSELOR at a time as CLIENT.
-  * Become a CLIENT LISTENER, to receive messages sent from CLIENTS.
   * Apply to become a COUNSELOR. 
      * User must verify themelves through additional registration via the PROFILE / ACCOUNT section, and undergo an approval process.   
-  * In summary of the above, there are three types of Registered Users: CLIENTS, CLIENT LISTENERS, and COUNSELORS
-  * ADMINISTRATORS are certified moderators of the application and its users' adherence to its terms of use. 
+
+* _Stretch
+  * In summary of the above, there are four types of Users: CLIENTS, CLIENT LISTENERS, and COUNSELORS, and ADMINISTRATORS
+  * Become a CLIENT LISTENER, to receive messages sent from CLIENTS.
+  * Exchange text messages with one CLIENT LISTENER at a time, as a CLIENT, free of charge._ 
 
 * TALKS guidelines:
-  * Are begun by a CLIENT seeking a CLIENT LISTENER or a COUNSELOR. 
-  * There are only one each of two different types of conversation possible at any given time between users: CLIENT and CLIENT LISTENER and CLIENT and COUNSELOR. 
-  * Active TALK may be ended at either time by any party. If the talk is discontinued by a CLIENT LISTENER or a COUNSELOR, a reason for discontinuation must be documented.  
+  * Are begun by a CLIENT seeking a COUNSELOR, _or a CLIENT LISTENER_
+    
+  * There are only one each of two different types of conversation possible at any given time between users:
+    * CLIENT and COUNSELOR. 
+    * _CLIENT and CLIENT LISTENER._
+    
+  * Active TALK may be ended at either time by any party. If the talk is discontinued by a _CLIENT LISTENER_ or a COUNSELOR, a reason for discontinuation must be documented.  
+  
   * All users are able to report another user for inappropriate behavior, at which point an ADMINISTRATOR will be notified. 
     * ADMINISTRATORS may temporarily disable any user's Openly account during the mediation procedure, or permanently as a result of violation(s) of user agreement or contract. 
   * There are "heated" words and terms which will bring each conversation to the attention of an ADMINISTRATOR. The purpose of this is to provide all users with quality counseling, and to protect all users from potential abuse.  
