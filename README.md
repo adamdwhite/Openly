@@ -3,7 +3,7 @@
 
  * My goals in programming this application are as follows:
    * To build a full-stack application using Ruby on Rails. 
-   * To incorporate the functionality of asynchronous instant messaging between _multiple types of_ users.
+   * To incorporate the functionality of asynchronous instant messaging between Client and Counselor users.
    * To build and maintain a safe environment to foster improved mental health and advice for clients seeking help.
    * To ensure secure confidentiality and security for communication and financial transactions. 
 
@@ -12,7 +12,7 @@
 ## Table of Contents:
 * Application Specifications
   * MVP
-    * _Stretch Goals in italics_
+    * _Stretch Goals will be in italics throughout this document _
 * Use Cases / Stories
 * Technology Used
 * Wireframes: attachments WIP
@@ -22,57 +22,69 @@
 
 * Visiting User may: 
   * Only view informational content, with prompts to create an Openly account. 
-  * Not interact with Registered Users or Openly staff. 
+  * Not interact with any Registered Users or Openly Admin. 
 
 * Registration: 
   * To authenticate, all users must create a single PROFILE with the following details (all required): 
     * email address
     * password
-    * first name 
-    * last name  
+    * type of account (CLIENT or COUNSELOR)
     * application terms of use agreement 
 
-* ACCOUNT types:
-  * All of the above is required of both users, plus...
   
   * CLIENT Account:
-    * age (why we need this...)
-    * zipcode (why we need this...)
-    * Alias 
-    * CLIENT terms of use agreement 
-    * payment type _(optional in v.2)_
+    * first name --OPTIONAL
+    * last name --OPTIONAL
+    * age (why we ask for this...) --OPTIONAL
+    * zipcode (why we need this...) --REQUIRED
+    * Alias (default first Name) --OPTIONAL
+    * Image (default Avatar) --OPTIONAL
+    * CLIENT terms of use agreement --REQUIRED
+    * payment type --REQUIRED (for appointed COUNSELOR)  
     * _become a CLIENT LISTENER_ 
             
   * COUNSELOR Account: 
-      * payment type (to receive payment)
-      * terms of use agreement 
-      * Contract
-      * SSN 
-      * occupation title 
-      * license state 
+    * first name --REQUIRED
+    * last name --REQUIRED
+    * age (why we ask for this...) --OPTIONAL
+    * zipcode (why we ask for this...) --REQUIRED
+    * payment type (to receive payment) --REQUIRED
+    * COUNSELOR terms of use agreement --REQUIRED
+    * Professional Contract --REQUIRED
+    * SSN --REQUIRED
+    * occupation title --REQUIRED 
+    * license state --REQUIRED
+    
 
   * ADMINISTRATOR Account: 
+    * Are pre-registered with assigned accounts. 
     * Certified moderators of the application and its users' adherence to its terms of use. 
+    * One ADMIN to one CONVERSATION.
 
 * All Registered Users may:
   * Update their REGISTRATION details at any time.
-  * Exchange text messages with one COUNSELOR at a time as CLIENT.
-  * Apply to become a COUNSELOR. 
-     * User must verify themelves through additional registration via the PROFILE / ACCOUNT section, and undergo an approval process.   
+  * Exchange text messages with one COUNSELOR at a time as CLIENT, or vise-versa.
+  * Register as a CLIENT.
+  * Register as a COUNSELOR. 
+     * COUNSELORS must be verifies through the ACCOUNT section, and undergo an approval process.   
 
 * _Stretch
   * In summary of the above, there are four types of Users: CLIENTS, CLIENT LISTENERS, and COUNSELORS, and ADMINISTRATORS
   * Become a CLIENT LISTENER, to receive messages sent from CLIENTS.
   * Exchange text messages with one CLIENT LISTENER at a time, as a CLIENT, free of charge._ 
 
-* TALKS guidelines:
-  * Are begun by a CLIENT seeking a COUNSELOR, _or a CLIENT LISTENER_
+* CONVERSATIONS guidelines:
+  * Introductory: CLIENT seeking guidance 
+  * CLIENT w COUNSELOR : are initialized by an ADMIN COUNSELOR upon the approval of a CLIENT 
+  * _or a CLIENT LISTENER_
     
-  * There are only one each of two different types of conversation possible at any given time between users:
-    * CLIENT and COUNSELOR. 
-    * _CLIENT and CLIENT LISTENER._
+  * Types of conversation possible at any given time between users:
+    * CLIENT w ADMIN
+    * CLIENT w COUNSELOR, moderated by an ADMIN
+    * _CLIENT and CLIENT LISTENER, moderated by an ADMIN_
     
-  * Active TALK may be ended at either time by any party. If the talk is discontinued by a _CLIENT LISTENER_ or a COUNSELOR, a reason for discontinuation must be documented.  
+  * Active CONVERSATION may be ended at either time by any party. 
+  * If the talk is discontinued by an ADMIN, a COUNSELOR, or a _CLIENT LISTENER_, then a reason for discontinuation must be documented.  
   
   * All users are able to report another user for inappropriate behavior, at which point an ADMINISTRATOR will be notified. 
     * ADMINISTRATORS may temporarily disable any user's Openly account during the mediation procedure, or permanently as a result of violation(s) of user agreement or contract. 
@@ -81,42 +93,45 @@
 # Use Cases: 
 
 ## CLIENT Story: 
-  * New TALK: 
+  * New CONVERSATION: 
+    * One CLIENT to one ADMIN at a time. 
+    * One CLIENT to one COUNSELOR (plus previous ADMIN) at a time.
     * Given a user is authenticated and using the application as a CLIENT 
-    * When CLIENT clicks/taps a button to BEGIN a conversation with a CLIENT LISTENER or COUNSELOR
-    * Then the application will perform a search for the nearest available CLIENT LISTENER
-    * Then an automated message will show the CLIENT the status of the matching process, and provide both anonymized matched parties with a standard introductory greeting.
-    EXAMPLE: message to CLIENT: "You have started a conversation with (CLIENT LISTENER) "JohnDoe". What would you like to talk about?" ... message to CLIENT LISTENER: "You have been matched with (CLIENT) "JaneDoe". Please standby to receive their messages. This conversation will expire in X hours if you do not respond."  
-
-  * End TALK:
-    * Given the CLIENT is in an active conversation with a CLIENT LISTENER or a COUNSELOR
-    * When CLIENT decides to discontinue the conversation, by clicking / tapping the appropriate button within the TALKS DETAILS section.
-    * Then CLIENT will be provided an appropriate confirmation screen, and will therafter be able to initiate a new TALK.
+    * When CLIENT clicks/taps a button to BEGIN a conversation with a COUNSELOR
+    * Then the application will perform a search for the nearest available COUNSELOR
+    * Then an automated message will show the CLIENT the status of the matching process, and provide matched parties with a standard introductory greeting.
     
-  * TALK DETAILS:
-    * Given a CLIENT selects TALK DETAILS in a new or ongoing conversation with a CLIENT LISTENER or a COUNSELOR
+    EXAMPLE: message to CLIENT: "You have started a conversation with (COUNSELOR) "JohnDoe". What would you like to talk about?" ... message to COUNSELOR: "You have been matched with (CLIENT) "JaneDoe". Please standby to receive their messages. This conversation will expire in X hours if you do not respond."  
+
+  * End CONVERSATION:
+    * Given the CLIENT is in an active conversation with a CLIENT LISTENER or a COUNSELOR
+    * When CLIENT decides to discontinue the conversation, by clicking / tapping the appropriate button within the DETAILS section.
+    * Then CLIENT will be provided an appropriate confirmation screen, and will therafter be able to initiate a new CONVERSATION.
+    
+  * CONVERSATION DETAILS:
+    * Given a CLIENT selects DETAILS in a new or ongoing conversation with a CLIENT LISTENER or a COUNSELOR
     * When CLIENT updates this conversation with TOPICS from a predetermined list (see list of [topics])
     * Then both CLIENT and LISTENER/COUNSELOR may view these details. 
   
   * CLIENT: COUNSELOR Access:
-    * Given a CLIENT chooses to access TALKS with a COUNSELOR 
+    * Given a CLIENT chooses to access CONVERSATION with a COUNSELOR 
     * When CLIENT enters a PAYMENT TYPE and agrees to the BILLING scenario within the ACCOUNT section
     * Then the CLIENT may begin a TALK with a professional COUNSELOR  
 
-## CLIENT LISTENER Story:
+_## CLIENT LISTENER Story:
   * VERIFICATION
-    * Given the user is authenticated
-    * When user selects the option to become a LISTENER within the ACCOUNT section 
-    and has signed the terms of use agreement, 
-    * Then the user may view and select a LISTEN toggle.
+    * _Given the user is authenticated_
+    * _When user selects the option to become a LISTENER within the ACCOUNT section 
+    and has signed the terms of use agreement,_ 
+    * _Then the user may view and select a LISTEN toggle._
     
-  * New TALK: 
-    * Given the user has been VERIFIED as a CLIENT LISTENER
-    * When the LISTEN ("active", "listening", etc.) toggle has been made "active" by the user
-    * Then user will be notified when a matching CLIENT is determined, and TALK icon will indicate any unread messages from the CLIENT.  
+  * _New CONVERSATION: 
+    * _Given the user has been VERIFIED as a CLIENT LISTENER
+    * _When the LISTEN ("active", "listening", etc.) toggle has been made "active" by the user
+    * _Then user will be notified when a matching CLIENT is determined, and CONVERSATION icon will indicate any unread messages from the CLIENT.  
    
-   * End TALK:
-     * The CLIENT LISTENER may discontinue the conversation at any point, but must provide a reason why, by way of a message prompt which is then sent to an ADMINISTRATOR.
+   * _End TALK:
+     * _The CLIENT LISTENER may discontinue the conversation at any point, and will be prompted to provide optional END-FEEDBACK as to why.
    
 ## COUNSELOR story: 
   * VERIFICATION
