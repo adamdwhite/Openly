@@ -118,20 +118,20 @@
     * When CLIENT enters a PAYMENT TYPE and agrees to the BILLING scenario within the ACCOUNT section
     * Then the CLIENT may begin a TALK with a professional COUNSELOR  
 
-_## CLIENT LISTENER Story:
-  * VERIFICATION
-    * _Given the user is authenticated_
-    * _When user selects the option to become a LISTENER within the ACCOUNT section 
-    and has signed the terms of use agreement,_ 
-    * _Then the user may view and select a LISTEN toggle._
+## _CLIENT LISTENER Story:
+  * _VERIFICATION
+    Given the user is authenticated
+    When user selects the option to become a LISTENER within the ACCOUNT section 
+    and has signed the terms of use agreement, 
+    Then the user may view and select a LISTEN toggle.
     
   * _New CONVERSATION: 
-    * _Given the user has been VERIFIED as a CLIENT LISTENER
-    * _When the LISTEN ("active", "listening", etc.) toggle has been made "active" by the user
-    * _Then user will be notified when a matching CLIENT is determined, and CONVERSATION icon will indicate any unread messages from the CLIENT.  
+    Given the user has been VERIFIED as a CLIENT LISTENER
+    When the LISTEN ("active", "listening", etc.) toggle has been made "active" by the user
+    Then user will be notified when a matching CLIENT is determined, and CONVERSATION icon will indicate any unread messages from the CLIENT.  
    
    * _End TALK:
-     * _The CLIENT LISTENER may discontinue the conversation at any point, and will be prompted to provide optional END-FEEDBACK as to why.
+     The CLIENT LISTENER may discontinue the conversation at any point, and will be prompted to provide optional END-FEEDBACK as to why.
    
 ## COUNSELOR story: 
   * VERIFICATION
