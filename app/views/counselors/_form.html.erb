@@ -1,0 +1,77 @@
+<%= form_with(model: counselor, local: true) do |form| %>
+  <% if counselor.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(counselor.errors.count, "error") %> prohibited this counselor from being saved:</h2>
+
+      <ul>
+      <% counselor.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :first_name %>
+    <%= form.text_field :first_name, id: :counselor_first_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :last_name %>
+    <%= form.text_field :last_name, id: :counselor_last_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :age %>
+    <%= form.number_field :age, id: :counselor_age %>
+  </div>
+
+  <div class="field">
+    <%= form.label :gender %>
+    <%= form.collection_select :gender, Client.all, id: :counselor_gender %>
+  </div>
+
+  <div class="field">
+    <%= form.label :zipcode %>
+    <%= form.number_field :zipcode, id: :counselor_zipcode %>
+  </div>
+
+  <div class="field">
+    <%= form.label :image %>
+    <%= form.file_field_tag :image, id: :counselor_image %>
+  </div>
+
+  <div class="field">
+    <%= form.label :ssn %>
+    <%= form.number_field :ssn, id: :counselor_ssn %>
+  </div>
+
+  <div class="field">
+    <%= form.label :occ_title %>
+    <%= form.text_field :occ_title, id: :counselor_occ_title %>
+  </div>
+
+  <div class="field">
+    <%= form.label :occ_state %>
+    <%= form.text_field :occ_state, id: :counselor_occ_state %>
+  </div>
+
+  <div class="field">
+    <%= form.label :license %>
+    <%= form.text_field :license, id: :counselor_license %>
+  </div>
+
+  <div class="field">
+    <%= form.label :payment %>
+    <%= form.collection_select :payment, id: :counselor_payment %>
+  </div>
+
+  <div class="field">
+    <%= form.label :agreement %>
+    <%= form.check_box :agreement, id: :counselor_agreement %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
