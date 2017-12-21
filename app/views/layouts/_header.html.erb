@@ -1,0 +1,27 @@
+<%# NAVBAR Contents %>
+  
+    <header class="navbar navbar-fixed-top navbar-inverse">
+      <div class="container">
+        <%= link_to "Openly", '#', id: "logo" %>
+        <nav>
+          
+          
+          <ul class="nav navbar-nav navbar-right">
+            <li><%= link_to "Logo",   '#' %></li>
+            <li><%= link_to "Help",   '#' %><i class="material-icons">help</i></li>
+          
+          <%# <% if logged_in? %> 
+
+            <li><%= link_to "Talk", '#' %><i class="material-icons">weekend</i></li>
+            <li><%= link_to "Account", '#' %><i class="material-icons">account_circle</i></li>
+            <li><%= link_to "Log Out", '#' %>offline_pin</li>
+
+          <%# <% else %> 
+            <li><%= link_to "Log In", '#' %></li>
+
+          <%# <% end %> 
+
+          </ul>
+        </nav>
+      </div>
+    </header>

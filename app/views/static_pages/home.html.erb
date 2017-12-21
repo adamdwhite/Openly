@@ -1,0 +1,55 @@
+<div class="center jumbotron">
+  <h1>Welcome to Openly</h1>
+
+  <h2>
+    This is the home page for the
+    <a href="http://www.railstutorial.org/">Openly</a>
+    a website.
+  </h2>
+
+  <%= link_to "Sign Up", '#', class: "btn btn-lg btn-primary" %>
+</div>
+
+<%# <%= link_to image_tag("image.png", alt: "Rails logo"),
+            'nashvillesoftwareschool.com' %> %>
+
+
+<%# PARALLEX Code block %>
+<style>
+.parallax {
+    /* The image used */
+    background-image: url("img_parallax.jpg");
+
+    /* Set a specific h eight */
+    min-height: 500px; 
+
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+</style>
+</head>
+<body>
+
+<p>Scroll Up and Down this page to see the parallax scrolling effect.</p>
+
+<div class="parallax"></div>
+
+<div style="height:250px;background-color:red;font-size:36px">
+Scroll Up and Down this page to see the parallax scrolling effect.
+This div is just here to enable scrolling.
+Tip: Try to remove the background-attachment property to remove the scrolling effect.
+</div>
+<br>
+<br>
+<br>
+<div style="height:250px;background-color:red;font-size:36px">
+Scroll Up and Down this page to see the parallax scrolling effect.
+This div is just here to enable scrolling.
+Tip: Try to remove the background-attachment property to remove the scrolling effect.
+</div>
+
+</body>
+</html>            
