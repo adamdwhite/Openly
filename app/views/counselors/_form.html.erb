@@ -9,7 +9,7 @@
       <% end %>
       </ul>
     </div>
-  <% end %>
+    <% end %>
 
   <div class="field">
     <%= form.label :first_name %>
@@ -28,7 +28,7 @@
 
   <div class="field">
     <%= form.label :gender %>
-    <%= form.collection_select :gender, id: :counselor_gender %>
+    <%= form.select(:couselor_gender, ['Undisclosed','Male','Female','Other'], {}, { :class => 'select' })%>
   </div>
 
   <div class="field">
@@ -38,7 +38,7 @@
 
   <div class="field">
     <%= form.label :image %>
-    <%= form.file_field_tag :image, id: :counselor_image %>
+    <%= form.text_field :image, id: :counselor_image %>
   </div>
 
   <div class="field">
@@ -63,7 +63,7 @@
 
   <div class="field">
     <%= form.label :payment %>
-    <%= form.collection_select :payment, id: :counselor_payment %>
+    <%= form.text_field :payment, id: :counselor_payment %>
   </div>
 
   <div class="field">
