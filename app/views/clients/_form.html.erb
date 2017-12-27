@@ -27,6 +27,11 @@
   </div>
 
   <div class="field">
+    <%= form.label :gender %>
+    <%= form.select(:client_gender, ['Undisclosed','Male','Female','Other'], {}, { :class => 'select' })%>
+  </div>
+
+  <div class="field">
     <%= form.label :zipcode %>
     <%= form.number_field :zipcode, id: :client_zipcode %>
   </div>
@@ -43,7 +48,7 @@
 
   <div class="field">
     <%= form.label :payment %>
-    <%= form.check_box :payment, id: :client_payment %>
+    <%= form.text_field :payment, id: :client_payment %>
   </div>
 
   <div class="actions">
