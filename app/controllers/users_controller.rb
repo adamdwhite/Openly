@@ -28,7 +28,8 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
-      flash[:success] = "Welcome to Openly!"
+      log_in @user
+      flash.now[:success] = "Welcome to Openly! Please visit your Account section to complete your profile."
       redirect_to @user
     else
       render 'new'
@@ -64,7 +65,7 @@ class UsersController < ApplicationController
     def set_user
       @user = User.find(params[:id])
     end
-
+  
     # Never trust parameters from the scary internet, only allow the white list through.
 
 # PARAMS 
@@ -72,6 +73,7 @@ class UsersController < ApplicationController
     #   params.fetch(:user, {})
     # end
     def user_params   
-        params.require(:user).permit(:email, :password, :password_confirmation)
+        params.require(:user).permit(:email, :password)
     end
-  end
+end
+
