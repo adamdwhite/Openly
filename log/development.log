@@ -17698,3 +17698,419 @@ Processing by UsersController#new as HTML
 Completed 200 OK in 81ms (Views: 76.1ms | ActiveRecord: 0.3ms)
 
 
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddRememberDigestToUsers (20171231230443)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (2.0ms)[0m  [1m[35mALTER TABLE "users" ADD "remember_digest" varchar[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20171231230443"]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/login" for 127.0.0.1 at 2018-01-01 14:36:52 -0600
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+SyntaxError (/Users/adamdwhite/workspace/Openly/app/controllers/sessions_controller.rb:9: syntax error, unexpected '?'
+    ?user = User.find_by(email: par
+     ^
+/Users/adamdwhite/workspace/Openly/app/controllers/sessions_controller.rb:11: syntax error, unexpected '?'
+    if ?user && ?user.authenticate(par
+        ^
+/Users/adamdwhite/workspace/Openly/app/controllers/sessions_controller.rb:16: syntax error, unexpected tIDENTIFIER, expecting ':'
+      params[:session][:remember_me] == '1
+            ^
+/Users/adamdwhite/workspace/Openly/app/controllers/sessions_controller.rb:16: syntax error, unexpected '?', expecting ')'
+member_me] == '1' ? remember(?user) : forget(?user)
+                              ^
+/Users/adamdwhite/workspace/Openly/app/controllers/sessions_controller.rb:33: syntax error, unexpected keyword_end, expecting end-of-input):
+  
+app/controllers/sessions_controller.rb:9: syntax error, unexpected '?'
+app/controllers/sessions_controller.rb:11: syntax error, unexpected '?'
+app/controllers/sessions_controller.rb:16: syntax error, unexpected tIDENTIFIER, expecting ':'
+app/controllers/sessions_controller.rb:16: syntax error, unexpected '?', expecting ')'
+app/controllers/sessions_controller.rb:33: syntax error, unexpected keyword_end, expecting end-of-input
+Started GET "/login" for 127.0.0.1 at 2018-01-01 14:37:23 -0600
+  
+SyntaxError (/Users/adamdwhite/workspace/Openly/app/controllers/sessions_controller.rb:9: syntax error, unexpected '?'
+    ?user = User.find_by(email: par
+     ^
+/Users/adamdwhite/workspace/Openly/app/controllers/sessions_controller.rb:11: syntax error, unexpected '?'
+    if ?user && ?user.authenticate(par
+        ^
+/Users/adamdwhite/workspace/Openly/app/controllers/sessions_controller.rb:16: syntax error, unexpected tIDENTIFIER, expecting ':'
+      params[:session][:remember_me] == '1
+            ^
+/Users/adamdwhite/workspace/Openly/app/controllers/sessions_controller.rb:16: syntax error, unexpected '?', expecting ')'
+member_me] == '1' ? remember(?user) : forget(?user)
+                              ^
+/Users/adamdwhite/workspace/Openly/app/controllers/sessions_controller.rb:33: syntax error, unexpected keyword_end, expecting end-of-input):
+  
+app/controllers/sessions_controller.rb:9: syntax error, unexpected '?'
+app/controllers/sessions_controller.rb:11: syntax error, unexpected '?'
+app/controllers/sessions_controller.rb:16: syntax error, unexpected tIDENTIFIER, expecting ':'
+app/controllers/sessions_controller.rb:16: syntax error, unexpected '?', expecting ')'
+app/controllers/sessions_controller.rb:33: syntax error, unexpected keyword_end, expecting end-of-input
+Started GET "/" for 127.0.0.1 at 2018-01-01 14:37:28 -0600
+  
+SyntaxError (/Users/adamdwhite/workspace/Openly/app/helpers/sessions_helper.rb:50: syntax error, unexpected end-of-input, expecting keyword_end):
+  
+app/helpers/sessions_helper.rb:50: syntax error, unexpected end-of-input, expecting keyword_end
+app/controllers/application_controller.rb:1:in `<top (required)>'
+app/controllers/static_pages_controller.rb:1:in `<top (required)>'
+Started GET "/" for 127.0.0.1 at 2018-01-01 14:38:10 -0600
+  
+SyntaxError (/Users/adamdwhite/workspace/Openly/app/helpers/sessions_helper.rb:49: syntax error, unexpected end-of-input, expecting keyword_end):
+  
+app/helpers/sessions_helper.rb:49: syntax error, unexpected end-of-input, expecting keyword_end
+app/controllers/application_controller.rb:1:in `<top (required)>'
+app/controllers/static_pages_controller.rb:1:in `<top (required)>'
+Started GET "/" for 127.0.0.1 at 2018-01-01 14:38:18 -0600
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (0.8ms)
+  Rendered layouts/_shim.html.erb (0.5ms)
+  Rendered layouts/_header.html.erb (153.5ms)
+Completed 500 Internal Server Error in 2246ms
+
+
+  
+ActionView::Template::Error (undefined method `logged_in?' for #<#<Class:0x00007fbd264eac38>:0x00007fbd264e8c80>
+Did you mean?  log_in):
+     8:           <ul class="nav navbar-nav navbar-right">
+     9:             <li><%= link_to "Help", help_path %><i class="material-icons">help</i></li>
+    10:           
+    11:           <% if logged_in? %>
+    12:           
+    13:           <%# TALK Sub Nav %>
+    14:           <li><%= link_to "Talk", '#' %><i class="material-icons">weekend</i></li> 
+  
+app/views/layouts/_header.html.erb:11:in `_app_views_layouts__header_html_erb__1508667486169142405_70225221000640'
+app/views/layouts/application.html.erb:28:in `_app_views_layouts_application_html_erb__2935224318895183906_70225184096600'
+Started GET "/" for 127.0.0.1 at 2018-01-01 14:39:26 -0600
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (0.6ms)
+  Rendered layouts/_shim.html.erb (0.3ms)
+  Rendered layouts/_header.html.erb (136.7ms)
+Completed 500 Internal Server Error in 203ms
+
+
+  
+ActionView::Template::Error (undefined method `is_logged_in?' for #<#<Class:0x00007fbd264eac38>:0x00007fbd2aaabf88>):
+     8:           <ul class="nav navbar-nav navbar-right">
+     9:             <li><%= link_to "Help", help_path %><i class="material-icons">help</i></li>
+    10:           
+    11:           <% if is_logged_in? %>
+    12:           
+    13:           <%# TALK Sub Nav %>
+    14:           <li><%= link_to "Talk", '#' %><i class="material-icons">weekend</i></li> 
+  
+app/views/layouts/_header.html.erb:11:in `_app_views_layouts__header_html_erb__1508667486169142405_70225221206860'
+app/views/layouts/application.html.erb:28:in `_app_views_layouts_application_html_erb__2935224318895183906_70225220848340'
+Started GET "/" for 127.0.0.1 at 2018-01-01 14:45:19 -0600
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (1.1ms)
+  Rendered layouts/_shim.html.erb (0.4ms)
+  Rendered layouts/_header.html.erb (245.0ms)
+Completed 500 Internal Server Error in 330ms
+
+
+  
+ActionView::Template::Error (undefined method `is_logged_in?' for #<#<Class:0x00007fbd264eac38>:0x00007fbd284377f8>):
+     8:           <ul class="nav navbar-nav navbar-right">
+     9:             <li><%= link_to "Help", help_path %><i class="material-icons">help</i></li>
+    10:           
+    11:           <% if is_logged_in? %>
+    12:           
+    13:           <%# TALK Sub Nav %>
+    14:           <li><%= link_to "Talk", '#' %><i class="material-icons">weekend</i></li> 
+  
+app/views/layouts/_header.html.erb:11:in `_app_views_layouts__header_html_erb__1508667486169142405_70225156054880'
+app/views/layouts/application.html.erb:28:in `_app_views_layouts_application_html_erb__2935224318895183906_70225200521620'
+Started GET "/" for 127.0.0.1 at 2018-01-01 14:45:27 -0600
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (0.8ms)
+  Rendered layouts/_shim.html.erb (0.3ms)
+  Rendered layouts/_header.html.erb (134.7ms)
+Completed 500 Internal Server Error in 179ms
+
+
+  
+ActionView::Template::Error (undefined method `logged_in?' for #<#<Class:0x00007fbd264eac38>:0x00007fbd29f7cdd8>
+Did you mean?  log_in):
+     8:           <ul class="nav navbar-nav navbar-right">
+     9:             <li><%= link_to "Help", help_path %><i class="material-icons">help</i></li>
+    10:           
+    11:           <% if logged_in? %>
+    12:           
+    13:           <%# TALK Sub Nav %>
+    14:           <li><%= link_to "Talk", '#' %><i class="material-icons">weekend</i></li> 
+  
+app/views/layouts/_header.html.erb:11:in `_app_views_layouts__header_html_erb__1508667486169142405_70225213745020'
+app/views/layouts/application.html.erb:28:in `_app_views_layouts_application_html_erb__2935224318895183906_70225214811220'
+Started GET "/" for 127.0.0.1 at 2018-01-01 14:45:42 -0600
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (0.9ms)
+  Rendered layouts/_shim.html.erb (0.3ms)
+  Rendered layouts/_header.html.erb (133.1ms)
+Completed 500 Internal Server Error in 181ms
+
+
+  
+ActionView::Template::Error (undefined method `signed_in?' for #<#<Class:0x00007fbd264eac38>:0x00007fbd2a1ab960>):
+     8:           <ul class="nav navbar-nav navbar-right">
+     9:             <li><%= link_to "Help", help_path %><i class="material-icons">help</i></li>
+    10:           
+    11:           <% if signed_in? %>
+    12:           
+    13:           <%# TALK Sub Nav %>
+    14:           <li><%= link_to "Talk", '#' %><i class="material-icons">weekend</i></li> 
+  
+app/views/layouts/_header.html.erb:11:in `_app_views_layouts__header_html_erb__1508667486169142405_70225215721080'
+app/views/layouts/application.html.erb:28:in `_app_views_layouts_application_html_erb__2935224318895183906_70225215963640'
+Started GET "/" for 127.0.0.1 at 2018-01-01 14:46:26 -0600
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (0.7ms)
+  Rendered layouts/_shim.html.erb (0.3ms)
+  Rendered layouts/_header.html.erb (0.7ms)
+Completed 500 Internal Server Error in 43ms
+
+
+  
+SyntaxError (/Users/adamdwhite/workspace/Openly/app/views/layouts/_header.html.erb:57: syntax error, unexpected keyword_ensure, expecting end-of-input
+          ensure
+                ^):
+  
+app/views/layouts/_header.html.erb:57: syntax error, unexpected keyword_ensure, expecting end-of-input
+app/views/layouts/application.html.erb:28:in `_app_views_layouts_application_html_erb__2935224318895183906_70225206300000'
+Started GET "/" for 127.0.0.1 at 2018-01-01 14:47:08 -0600
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (0.7ms)
+  Rendered layouts/_shim.html.erb (0.6ms)
+  Rendered layouts/_header.html.erb (218.0ms)
+Completed 500 Internal Server Error in 274ms
+
+
+  
+ActionView::Template::Error (undefined method `log_out_path' for #<#<Class:0x00007fbd264eac38>:0x00007fbd28c8c9a8>
+Did you mean?  logout_path):
+    21:             <ul class="dropdown-menu">
+    22:               
+    23:               <%# CLIENT Profile %>
+    24:               <li><%= link_to "Client Profile", current_user %></li>
+    25:               
+    26:               <%# COUNSELOR Profile %>
+    27:               <li>
+  
+app/views/layouts/_header.html.erb:24:in `_app_views_layouts__header_html_erb__1508667486169142405_70225202380180'
+app/views/layouts/application.html.erb:28:in `_app_views_layouts_application_html_erb__2935224318895183906_70225170410040'
+Started GET "/" for 127.0.0.1 at 2018-01-01 14:50:46 -0600
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (0.8ms)
+  Rendered layouts/_shim.html.erb (0.3ms)
+  Rendered layouts/_header.html.erb (134.7ms)
+Completed 500 Internal Server Error in 191ms
+
+
+  
+ActionView::Template::Error (undefined method `log_out_path' for #<#<Class:0x00007fbd264eac38>:0x00007fbd29f9d9e8>
+Did you mean?  logout_path):
+    21:             <ul class="dropdown-menu">
+    22:               
+    23:               <%# CLIENT Profile %>
+    24:               <li><%= link_to "Client Profile", current_user %></li>
+    25:               
+    26:               <%# COUNSELOR Profile %>
+    27:               <li>
+  
+app/views/layouts/_header.html.erb:24:in `_app_views_layouts__header_html_erb__1508667486169142405_70225213716180'
+app/views/layouts/application.html.erb:28:in `_app_views_layouts_application_html_erb__2935224318895183906_70225214876840'
+Started GET "/" for 127.0.0.1 at 2018-01-01 14:51:29 -0600
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (0.7ms)
+  Rendered layouts/_shim.html.erb (0.3ms)
+  Rendered layouts/_header.html.erb (131.7ms)
+Completed 500 Internal Server Error in 186ms
+
+
+  
+ActionView::Template::Error (undefined method `log_out_path' for #<#<Class:0x00007fbd264eac38>:0x00007fbd2a1f8df0>
+Did you mean?  logout_path):
+    25:               
+    26:               <%# COUNSELOR Profile %>
+    27:               <li>
+    28:                 <%= link_to "Counselor Profile", current_user %>
+    29:               </li>
+    30:               <%# SETTINGS - Application %>
+    31:               <li>
+  
+app/views/layouts/_header.html.erb:28:in `_app_views_layouts__header_html_erb__1508667486169142405_70225170287940'
+app/views/layouts/application.html.erb:28:in `_app_views_layouts_application_html_erb__2935224318895183906_70225216113400'
+Started GET "/" for 127.0.0.1 at 2018-01-01 14:51:45 -0600
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (0.7ms)
+  Rendered layouts/_shim.html.erb (0.3ms)
+  Rendered layouts/_header.html.erb (0.7ms)
+  Rendered layouts/_footer.html.erb (0.8ms)
+Completed 200 OK in 45ms (Views: 42.1ms)
+
+
+Started GET "/img_parallax.jpg" for 127.0.0.1 at 2018-01-01 14:51:46 -0600
+  
+ActionController::RoutingError (No route matches [GET] "/img_parallax.jpg"):
+  
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+puma (3.11.0) lib/puma/configuration.rb:225:in `call'
+puma (3.11.0) lib/puma/server.rb:624:in `handle_request'
+puma (3.11.0) lib/puma/server.rb:438:in `process_client'
+puma (3.11.0) lib/puma/server.rb:302:in `block in run'
+puma (3.11.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/login" for 127.0.0.1 at 2018-01-01 14:51:57 -0600
+  
+SyntaxError (/Users/adamdwhite/workspace/Openly/app/controllers/sessions_controller.rb:9: syntax error, unexpected '?'
+    ?user = User.find_by(email: par
+     ^
+/Users/adamdwhite/workspace/Openly/app/controllers/sessions_controller.rb:11: syntax error, unexpected '?'
+    if ?user && ?user.authenticate(par
+        ^
+/Users/adamdwhite/workspace/Openly/app/controllers/sessions_controller.rb:16: syntax error, unexpected tIDENTIFIER, expecting ':'
+      params[:session][:remember_me] == '1
+            ^
+/Users/adamdwhite/workspace/Openly/app/controllers/sessions_controller.rb:16: syntax error, unexpected '?', expecting ')'
+member_me] == '1' ? remember(?user) : forget(?user)
+                              ^
+/Users/adamdwhite/workspace/Openly/app/controllers/sessions_controller.rb:33: syntax error, unexpected keyword_end, expecting end-of-input):
+  
+app/controllers/sessions_controller.rb:9: syntax error, unexpected '?'
+app/controllers/sessions_controller.rb:11: syntax error, unexpected '?'
+app/controllers/sessions_controller.rb:16: syntax error, unexpected tIDENTIFIER, expecting ':'
+app/controllers/sessions_controller.rb:16: syntax error, unexpected '?', expecting ')'
+app/controllers/sessions_controller.rb:33: syntax error, unexpected keyword_end, expecting end-of-input
+Started GET "/login" for 127.0.0.1 at 2018-01-01 14:54:30 -0600
+  
+SyntaxError (/Users/adamdwhite/workspace/Openly/app/controllers/sessions_controller.rb:11: syntax error, unexpected '?'
+    if ?user && ?user.authenticate(par
+        ^
+/Users/adamdwhite/workspace/Openly/app/controllers/sessions_controller.rb:16: syntax error, unexpected tIDENTIFIER, expecting ':'
+      params[:session][:remember_me] == '1
+            ^
+/Users/adamdwhite/workspace/Openly/app/controllers/sessions_controller.rb:16: syntax error, unexpected '?', expecting ')'
+member_me] == '1' ? remember(?user) : forget(?user)
+                              ^
+/Users/adamdwhite/workspace/Openly/app/controllers/sessions_controller.rb:33: syntax error, unexpected keyword_end, expecting end-of-input):
+  
+app/controllers/sessions_controller.rb:11: syntax error, unexpected '?'
+app/controllers/sessions_controller.rb:16: syntax error, unexpected tIDENTIFIER, expecting ':'
+app/controllers/sessions_controller.rb:16: syntax error, unexpected '?', expecting ')'
+app/controllers/sessions_controller.rb:33: syntax error, unexpected keyword_end, expecting end-of-input
+Started GET "/login" for 127.0.0.1 at 2018-01-01 14:55:09 -0600
+  
+SyntaxError (/Users/adamdwhite/workspace/Openly/app/controllers/sessions_controller.rb:11: syntax error, unexpected '?'
+    if ?user && ?user.authenticate(par
+        ^
+/Users/adamdwhite/workspace/Openly/app/controllers/sessions_controller.rb:16: syntax error, unexpected tIDENTIFIER, expecting ':'
+      params[:session][:remember_me] == '1
+            ^
+/Users/adamdwhite/workspace/Openly/app/controllers/sessions_controller.rb:16: syntax error, unexpected '?', expecting ')'
+member_me] == '1' ? remember(?user) : forget(?user)
+                              ^
+/Users/adamdwhite/workspace/Openly/app/controllers/sessions_controller.rb:33: syntax error, unexpected keyword_end, expecting end-of-input):
+  
+app/controllers/sessions_controller.rb:11: syntax error, unexpected '?'
+app/controllers/sessions_controller.rb:16: syntax error, unexpected tIDENTIFIER, expecting ':'
+app/controllers/sessions_controller.rb:16: syntax error, unexpected '?', expecting ')'
+app/controllers/sessions_controller.rb:33: syntax error, unexpected keyword_end, expecting end-of-input
+Started GET "/" for 127.0.0.1 at 2018-01-01 14:55:15 -0600
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (1.6ms)
+  Rendered layouts/_shim.html.erb (0.4ms)
+  Rendered layouts/_header.html.erb (1.2ms)
+  Rendered layouts/_footer.html.erb (0.6ms)
+Completed 200 OK in 71ms (Views: 68.1ms)
+
+
+Started GET "/img_parallax.jpg" for 127.0.0.1 at 2018-01-01 14:55:15 -0600
+  
+ActionController::RoutingError (No route matches [GET] "/img_parallax.jpg"):
+  
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+puma (3.11.0) lib/puma/configuration.rb:225:in `call'
+puma (3.11.0) lib/puma/server.rb:624:in `handle_request'
+puma (3.11.0) lib/puma/server.rb:438:in `process_client'
+puma (3.11.0) lib/puma/server.rb:302:in `block in run'
+puma (3.11.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/signup" for 127.0.0.1 at 2018-01-01 14:55:19 -0600
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (17.1ms)
+  Rendered users/new.html.erb within layouts/application (19.3ms)
+  Rendered layouts/_shim.html.erb (0.3ms)
+  Rendered layouts/_header.html.erb (0.9ms)
+  Rendered layouts/_footer.html.erb (1.0ms)
+Completed 200 OK in 94ms (Views: 64.5ms | ActiveRecord: 1.5ms)
+
+
+Started POST "/signup" for 127.0.0.1 at 2018-01-01 14:55:28 -0600
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"proCe8jV+6xF47hCz6v+v6DQFDwsKuqAmcYaMhJPG72xGI+I1GF7bVPHXp5EnMpYIkU6AfWSVRgRKxH6gQpOnQ==", "user"=>{"email"=>"adamwhite82@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Create My Account"}
+Unpermitted parameter: :password_confirmation
+Completed 500 Internal Server Error in 101ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `password_digest=' for #<User:0x00007fbd2ad71538>
+Did you mean?  password=):
+  
+app/controllers/users_controller.rb:29:in `create'

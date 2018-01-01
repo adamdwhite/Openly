@@ -8,7 +8,7 @@
           <ul class="nav navbar-nav navbar-right">
             <li><%= link_to "Help", help_path %><i class="material-icons">help</i></li>
           
-          <% if logged_in? %>
+          <%# <% if logged_in? %> 
           
           <%# TALK Sub Nav %>
           <li><%= link_to "Talk", '#' %><i class="material-icons">weekend</i></li> 
@@ -21,11 +21,11 @@
             <ul class="dropdown-menu">
               
               <%# CLIENT Profile %>
-              <li><%= link_to "Client Profile", current_user %></li>
+              <%# <li><%= link_to "Client Profile", current_user</li> %> 
               
               <%# COUNSELOR Profile %>
               <li>
-                <%= link_to "Counselor Profile", current_user %>
+                <%# <%= link_to "Counselor Profile", current_user %> 
               </li>
               <%# SETTINGS - Application %>
               <li>
@@ -35,16 +35,16 @@
             
               <%# LOGOUT %>
               <li>
-                <%= link_to "Log out", logout_path, method: :delete %>
+                <%# <%= link_to "Log out", logout_path, method: :delete %> 
                 <i class="material-icons">offline_pin</i>
               </li>
             </ul>
           </li>
 
           <%# LOGIN %>
-          <% else %>
+          <%# <% else %> 
             <li><%= link_to "Log In", login_path %></li>
-          <% end %> 
+          <%# <% end %>  
 
           </ul>
         </nav>

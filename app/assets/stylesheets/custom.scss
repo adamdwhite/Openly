@@ -91,7 +91,7 @@ footer a {
 }
 
 footer a:hover {
-    color: #222;
+    color: rgb(68, 179, 74);
 }
 
 footer small {
@@ -184,8 +184,7 @@ input {
     height: auto !important;
 }
 
-
-/* forms */
+#new_user {}
 
 #error_explanation {
     color: lightcoral;
@@ -200,4 +199,18 @@ input {
     .form-control {
         color: lightcoral;
     }
+}
+
+.checkbox {
+    margin-top: -10px;
+    margin-bottom: 10px;
+    span {
+        margin-left: 20px;
+        font-weight: normal;
+    }
+}
+
+#session_remember_me {
+    width: auto;
+    margin-left: 0;
 }

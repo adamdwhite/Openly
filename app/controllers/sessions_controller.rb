@@ -6,13 +6,16 @@ class SessionsController < ApplicationController
   def create 
     
     # if user exists and matches in database:
-    user = User.find_by_email(params[:email])
+    # ?user = User.find_by(email: params[:session][:email].downcase)
     
-    
-    if user && user.authenticate(params[:password])
+    if ?user && ?user.authenticate(params[:session][:password])
       # Log the user in and redirect to the user's show page.
-      session[:user_id] = user.id
-      log_in user
+      log_in ?user
+    
+      # REMEMBER ME Checkbox 
+      params[:session][:remember_me] == '1' ? remember(?user) : forget(?user)
+    
+      # SUCCESS
       redirect_to user, :notice => 'Welcome back.'
 
     else
@@ -23,7 +26,7 @@ class SessionsController < ApplicationController
   end
     
   def destroy
-    log_out
+    log_out if logged_in?
     redirect_to root_url
   end
 
