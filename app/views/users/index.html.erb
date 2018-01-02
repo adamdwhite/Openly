@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Users</h1>
+<h1>All Users</h1>
 
 <table>
   <thead>
@@ -10,7 +10,26 @@
   </thead>
 
   <tbody>
+
+<%# Use for any block one wishes to paginate. Must be reflected in Gemfile wih gems of 'will_paginate' and 'bootstrap-will_paginate' %>
+
+  <%= will_paginate %>
+
+  <ul class="users">
     <% @users.each do |user| %>
+
+          <%# TEMPORARY %>
+          <%# render ' ' method in this context has the power to forego any following grouped attributes and render by the @users = User.all, insofar as all User objects have been correctly defined %>
+          <%# <%= render @user %>
+
+      <li>
+        <%= gravatar_for user, size: 50 %>
+        <%= link_to user.name, user %>
+      </li>
+  </ul>
+  
+  <%= will_paginate %>
+
       <tr>
         <td><%= link_to 'Show', user %></td>
         <td><%= link_to 'Edit', edit_user_path(user) %></td>

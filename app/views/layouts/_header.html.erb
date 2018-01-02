@@ -10,6 +10,8 @@
           
           <% if logged_in? %>
           
+          <li><%= link_to "Users", users_path %></li>
+
           <%# TALK Sub Nav %>
           <li><%= link_to "Talk", '#' %><i class="material-icons">weekend</i></li> 
 
@@ -29,7 +31,7 @@
               </li>
               <%# SETTINGS - Application %>
               <li>
-                <%= link_to "Settings", '#' %>
+              <%= link_to "Settings", edit_user_path(current_user) %>
               </li>
               <li class="divider"></li>
             

@@ -29,8 +29,13 @@ gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
 # Use Redis adapter to run Action Cable in production
 gem 'redis', '~> 3.0'
-# Use ActiveModel has_secure_password
+# Use ActiveModel has_secure_password when using bcrypt:
 gem 'bcrypt', '~> 3.1.7'
+# FAKER Allow us to make sample users with semi-realistic names and email addresses
+gem 'faker', '1.7.3'
+# Paginate all USERS to mutiple pages
+gem 'will_paginate',           '3.1.6'
+gem 'bootstrap-will_paginate', '1.0.0'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
