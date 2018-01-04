@@ -4,8 +4,8 @@
  * My goals in programming this application are as follows:
    * To build a full-stack application using Ruby on Rails. 
    * To incorporate the functionality of asynchronous instant messaging between Client and Counselor users.
-   * To build and maintain a safe environment to foster improved mental health and advice for clients seeking help.
-   * To secure financial transactions between client and counselor.
+   * To provide a safe environment in which to foster improved mental health and advice for clients seeking help.
+   * To secure financial transactions between client / counselor / admin (entity).
    * To ensure confidentiality during conversation.  
 
 * Diagramming, mockups, and planning hosted on Trello: [https://trello.com/###endpoint]
