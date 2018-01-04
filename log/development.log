@@ -21034,3 +21034,13 @@ Started GET "/cable" for 127.0.0.1 at 2018-01-03 20:52:10 -0600
 Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2018-01-03 20:52:10 -0600
 Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
 RoomChannel is transmitting the subscription confirmation
+Finished "/cable/" [WebSocket] for 127.0.0.1 at 2018-01-04 12:49:06 -0600
+Started GET "/cable" for 127.0.0.1 at 2018-01-04 12:49:07 -0600
+Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2018-01-04 12:49:07 -0600
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+RoomChannel is transmitting the subscription confirmation
+Finished "/cable/" [WebSocket] for 127.0.0.1 at 2018-01-04 14:33:08 -0600
+Started GET "/cable" for 127.0.0.1 at 2018-01-04 14:33:08 -0600
+Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2018-01-04 14:33:09 -0600
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+RoomChannel is transmitting the subscription confirmation
