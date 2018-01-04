@@ -5,22 +5,27 @@
         <%= link_to "Openly", about_path , id: "logo" %>
         <nav>
         
+          <%# HELP Sub NAve %>
           <ul class="nav navbar-nav navbar-right">
-            <li><%= link_to "Help", help_path %><i class="material-icons">help</i></li>
+            <li><%= link_to "Help", help_path %>
+            <%# <i class="material-icons">help</i> %>
+            </li>
           
           <% if logged_in? %>
           
           <li><%= link_to "Users", users_path %></li>
 
           <%# TALK Sub Nav %>
-          <li><%= link_to "Talk", '#' %><i class="material-icons">weekend</i></li> 
+          <li><%= link_to "Talk", '#' %>
+          </li> 
 
           <%# ACCOUNT Sub Nav %>
           <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-              Account <b class="caret"><i class="material-icons">account_circle</i></b>
-            </a>
+              Account <b class="caret">
+              </b>
             <ul class="dropdown-menu">
+            </a>
               
               <%# CLIENT Profile %>
               <li><%= link_to "Client Profile", current_user %></li>

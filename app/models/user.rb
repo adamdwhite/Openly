@@ -22,6 +22,8 @@ class User < ApplicationRecord
   
   validates :password, presence: true, length: { minimum: 6 }, allow_nil: true
 
+  validates :terms_of_service, acceptance: true
+
   def formatted_email
       "#{@name} <#{@email}>"
   end
