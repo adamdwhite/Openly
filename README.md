@@ -21,11 +21,11 @@
 
 ## Openly Application Specifications
 
-* Visiting User may: 
-  * Only view informational content, with prompts to create an Openly account. 
-  * Not interact with any Registered Users or Openly Admin. 
+* Visiting User: 
+  * View informational content, ABOUT link, with prompts to create an Openly account. 
+  * May not interact with any Registered Users or Openly Admin. 
 
-* Registration: 
+* REGISTERED User: 
   * To authenticate, all users must create a single PROFILE with the following details (all required): 
     * email address
     * password
@@ -37,21 +37,34 @@
     * first name --OPTIONAL
     * last name --OPTIONAL
     * age (why we ask for this...) --OPTIONAL
+    
     * zipcode (why we need this...) --REQUIRED
+    
     * Alias (default first Name) --OPTIONAL
-    * Image (default Avatar) --OPTIONAL
+    * Image (default Gravatar) --OPTIONAL
+    
     * CLIENT terms of use agreement --REQUIRED
+    
     * payment type --REQUIRED (for appointed COUNSELOR)  
-    * _become a CLIENT LISTENER_ 
+    * account number --REQUIRED 
+    
+    * _become a CLIENT LISTENER_(OPTIONAL) 
             
   * COUNSELOR Account: 
     * first name --REQUIRED
     * last name --REQUIRED
     * age (why we ask for this...) --OPTIONAL
+    
     * zipcode (why we ask for this...) --REQUIRED
+    
     * payment type (to receive payment) --REQUIRED
+    * account number --REQUIRED 
+    
+    * Image (default Gravatar) --OPTIONAL
+    
     * COUNSELOR terms of use agreement --REQUIRED
     * Professional Contract --REQUIRED
+    
     * SSN --REQUIRED
     * occupation title --REQUIRED 
     * license state --REQUIRED
