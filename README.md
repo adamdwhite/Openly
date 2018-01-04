@@ -5,7 +5,8 @@
    * To build a full-stack application using Ruby on Rails. 
    * To incorporate the functionality of asynchronous instant messaging between Client and Counselor users.
    * To build and maintain a safe environment to foster improved mental health and advice for clients seeking help.
-   * To ensure secure confidentiality and security for communication and financial transactions. 
+   * To secure financial transactions between client and counselor.
+   * To ensure confidentiality during conversation.  
 
 * Diagramming, mockups, and planning hosted on Trello: [https://trello.com/###endpoint]
 
