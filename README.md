@@ -194,12 +194,13 @@ These instructions will get you a copy of the project up and running on your loc
 * Ruby
 * Rails 
 * SQL
+* Bunch more shit peace fingers
 
 ## Authors
 
-Adam White 
+Adam D. White 
 
 ## Acknowledgments
 
 * Many thanks for the patient assistance from:  
-Hannah Hall, Jisie David, Casey Dailey, Jim Vickery, Brooke Wittenberg
+Jim Vickery, Hannah Hall, Jisie David, Brooke Wittenberg, Cohort 21. 
