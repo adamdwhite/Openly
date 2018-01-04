@@ -7,6 +7,9 @@ Rails.application.routes.draw do
   resources :counselors
   resources :clients
   resources :sessions
+
+  # Serve websocket cable requests in-process
+  mount ActionCable.server => '/cable'
   
   # STATIC PAGES 
   root 'static_pages#home'

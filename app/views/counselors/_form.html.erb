@@ -1,4 +1,8 @@
+<%# CREATE NEW COUNSELOR form %>
+
 <%= form_with(model: counselor, local: true) do |form| %>
+
+
   <% if counselor.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(counselor.errors.count, "error") %> prohibited this counselor from being saved:</h2>
@@ -22,8 +26,9 @@
   </div>
 
   <div class="field">
-    <%= form.label :age %>
-    <%= form.number_field :age, id: :counselor_age %>
+    <%= form.label :age, "Date of Birth" %>
+    <%= form.date_field :age, id: :counselor_age %>
+    <a>why we need to know this...</a>
   </div>
 
   <div class="field">
@@ -33,7 +38,7 @@
 
   <div class="field">
     <%= form.label :zipcode %>
-    <%= form.number_field :zipcode, id: :counselor_zipcode %>
+    <%= form.search_field :zipcode, id: :counselor_zipcode %>
   </div>
 
   <div class="field">
@@ -42,27 +47,36 @@
   </div>
 
   <div class="field">
-    <%= form.label :ssn %>
+    <%= form.label :ssn, "Social Security #" %>
     <%= form.number_field :ssn, id: :counselor_ssn %>
   </div>
 
   <div class="field">
-    <%= form.label :occ_title %>
+    <%= form.label :occ_title, "Occupational Title" %>
     <%= form.text_field :occ_title, id: :counselor_occ_title %>
   </div>
 
   <div class="field">
-    <%= form.label :occ_state %>
+    <%= form.label :occ_state, "U.S. State of License" %>
     <%= form.text_field :occ_state, id: :counselor_occ_state %>
   </div>
 
   <div class="field">
-    <%= form.label :license %>
+    <%= form.label :license, "License Number" %>
     <%= form.text_field :license, id: :counselor_license %>
   </div>
 
+<h2> Payment Information </h2> 
+<i class="material-icons">help</i>
+<hr>
+
   <div class="field">
-    <%= form.label :payment %>
+    <%= form.label :payment, "Payment Type"%>
+    <%= form.select(:couselor_payment, ['Visa','Mastercard','American Express','Discover', 'Other'], {}, { :class => 'select' })%>
+  </div>
+
+  <div class="field">
+    <%= form.label :license, "Account Number" %>
     <%= form.text_field :payment, id: :counselor_payment %>
   </div>
 
@@ -72,6 +86,6 @@
   </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit "Submit for Verification", class: "btn btn-primary" %>
   </div>
 <% end %>

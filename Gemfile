@@ -37,6 +37,39 @@ gem 'faker', '1.7.3'
 gem 'will_paginate',           '3.1.6'
 gem 'bootstrap-will_paginate', '1.0.0'
 
+# Converts all alert popup dialogs into Bootstrap modals 
+gem 'data-confirm-modal'
+
+# Development Dependencies for CARRIERWAVE:
+# gem 'rmagick'
+# gem 'cucumber' 
+# gem 'fog' 
+# gem 'generator_spec' 
+# gem 'mini_magick' 
+# gem 'pry'
+# gem 'timecop'
+# gem 'webmock' 
+
+# Runtime Dependencies for CARRIERWAVE:
+# gem 'activemodel'
+# gem 'activesupport'
+# gem 'mime-types'
+
+# For image/file upload:
+# gem 'carrierwave'
+
+
+# AUTHorization using CanCanCan - Note: RoR 5 uses CanCanCan and not CanCan (v4). 
+# Development Dependencies
+gem 'appraisal' 
+gem 'bundler' 
+gem 'rake' 
+gem 'rspec'
+gem 'rubocop' 
+
+# CanCanCAn
+gem 'cancancan'
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
