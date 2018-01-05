@@ -22808,3 +22808,164 @@ RoomChannel is transmitting the subscription confirmation
   [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
   [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
   [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/login" for 127.0.0.1 at 2018-01-05 12:41:45 -0600
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (466.7ms)
+  Rendered layouts/_shim.html.erb (0.5ms)
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  Rendered layouts/_header.html.erb (11.1ms)
+  Rendered layouts/_footer.html.erb (0.9ms)
+Completed 200 OK in 924ms (Views: 907.1ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/cable" for 127.0.0.1 at 2018-01-05 12:41:47 -0600
+Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2018-01-05 12:41:47 -0600
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+RoomChannel is transmitting the subscription confirmation
+Started POST "/login" for 127.0.0.1 at 2018-01-05 12:41:57 -0600
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"tKsH9UqBFgowXi9bllbYtWzmiSYMcjX4qh3UWsl490P5k00JET2epKJyqeG40o4D3oDIUgTKGhnniU0YcLdDVw==", "session"=>{"email"=>"adamwhite82@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "adamwhite82@gmail.com"], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 234ms (ActiveRecord: 1.3ms)
+
+
+  
+NoMethodError (undefined method `forget' for #<SessionsController:0x00007fbbe9f057d8>
+Did you mean?  format):
+  
+app/controllers/sessions_controller.rb:14:in `create'
+Finished "/cable/" [WebSocket] for 127.0.0.1 at 2018-01-05 12:41:58 -0600
+Started POST "/login" for 127.0.0.1 at 2018-01-05 12:46:25 -0600
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"tKsH9UqBFgowXi9bllbYtWzmiSYMcjX4qh3UWsl490P5k00JET2epKJyqeG40o4D3oDIUgTKGhnniU0YcLdDVw==", "session"=>{"email"=>"adamwhite82@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "adamwhite82@gmail.com"], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 235ms (ActiveRecord: 3.6ms)
+
+
+  
+NoMethodError (undefined method `forget' for #<SessionsController:0x00007fbbe6427e18>
+Did you mean?  format):
+  
+app/controllers/sessions_controller.rb:14:in `create'
+Started POST "/login" for 127.0.0.1 at 2018-01-05 12:46:36 -0600
+  
+SyntaxError (/Users/adamdwhite/workspace/Openly/app/controllers/sessions_controller.rb:15: syntax error, unexpected tIDENTIFIER, expecting ':'
+      redirect_to user
+                 ^):
+  
+app/controllers/sessions_controller.rb:15: syntax error, unexpected tIDENTIFIER, expecting ':'
+Started POST "/login" for 127.0.0.1 at 2018-01-05 12:47:01 -0600
+  
+SyntaxError (/Users/adamdwhite/workspace/Openly/app/controllers/sessions_controller.rb:15: syntax error, unexpected tIDENTIFIER, expecting ':'
+      redirect_back_or user
+                      ^):
+  
+app/controllers/sessions_controller.rb:15: syntax error, unexpected tIDENTIFIER, expecting ':'
+Started POST "/login" for 127.0.0.1 at 2018-01-05 12:47:10 -0600
+  
+SyntaxError (/Users/adamdwhite/workspace/Openly/app/controllers/sessions_controller.rb:15: syntax error, unexpected tIDENTIFIER, expecting keyword_do or '{' or '('
+      redirect_back_or user
+                           ^):
+  
+app/controllers/sessions_controller.rb:15: syntax error, unexpected tIDENTIFIER, expecting keyword_do or '{' or '('
+Started POST "/login" for 127.0.0.1 at 2018-01-05 12:56:44 -0600
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"tKsH9UqBFgowXi9bllbYtWzmiSYMcjX4qh3UWsl490P5k00JET2epKJyqeG40o4D3oDIUgTKGhnniU0YcLdDVw==", "session"=>{"email"=>"adamwhite82@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "adamwhite82@gmail.com"], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 181ms (ActiveRecord: 1.5ms)
+
+
+  
+NoMethodError (undefined method `forget' for #<SessionsController:0x00007fbbe63ed268>
+Did you mean?  format):
+  
+app/controllers/sessions_controller.rb:14:in `create'
+Started POST "/login" for 127.0.0.1 at 2018-01-05 13:11:36 -0600
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"tKsH9UqBFgowXi9bllbYtWzmiSYMcjX4qh3UWsl490P5k00JET2epKJyqeG40o4D3oDIUgTKGhnniU0YcLdDVw==", "session"=>{"email"=>"adamwhite82@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "adamwhite82@gmail.com"], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 106ms (ActiveRecord: 3.2ms)
+
+
+  
+NoMethodError (undefined method `remember_digest=' for #<User:0x00007fbbe96ad478>):
+  
+app/models/user.rb:39:in `forget'
+app/helpers/sessions_helper.rb:23:in `forget'
+app/controllers/sessions_controller.rb:14:in `create'
+Started POST "/login" for 127.0.0.1 at 2018-01-05 13:12:39 -0600
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"tKsH9UqBFgowXi9bllbYtWzmiSYMcjX4qh3UWsl490P5k00JET2epKJyqeG40o4D3oDIUgTKGhnniU0YcLdDVw==", "session"=>{"email"=>"adamwhite82@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "adamwhite82@gmail.com"], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 92ms (ActiveRecord: 1.0ms)
+
+
+  
+NoMethodError (undefined method `forget' for #<User:0x00007fbbe9fdb158>):
+  
+app/helpers/sessions_helper.rb:23:in `forget'
+app/controllers/sessions_controller.rb:14:in `create'
+Started POST "/login" for 127.0.0.1 at 2018-01-05 13:54:54 -0600
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"tKsH9UqBFgowXi9bllbYtWzmiSYMcjX4qh3UWsl490P5k00JET2epKJyqeG40o4D3oDIUgTKGhnniU0YcLdDVw==", "session"=>{"email"=>"adamwhite82@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "adamwhite82@gmail.com"], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 104ms (ActiveRecord: 1.1ms)
+
+
+  
+NoMethodError (undefined method `remember_digest=' for #<User:0x00007fbbeadf8880>
+Did you mean?  remember_token=):
+  
+app/models/user.rb:51:in `forget'
+app/helpers/sessions_helper.rb:23:in `forget'
+app/controllers/sessions_controller.rb:14:in `create'
+Started POST "/login" for 127.0.0.1 at 2018-01-05 14:00:03 -0600
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"tKsH9UqBFgowXi9bllbYtWzmiSYMcjX4qh3UWsl490P5k00JET2epKJyqeG40o4D3oDIUgTKGhnniU0YcLdDVw==", "session"=>{"email"=>"adamwhite82@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "adamwhite82@gmail.com"], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 98ms (ActiveRecord: 1.4ms)
+
+
+  
+NoMethodError (undefined method `activated?' for #<User:0x00007fbbe9200b00>
+Did you mean?  activation_token):
+  
+app/controllers/sessions_controller.rb:11:in `create'
+Started POST "/login" for 127.0.0.1 at 2018-01-05 14:01:18 -0600
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"tKsH9UqBFgowXi9bllbYtWzmiSYMcjX4qh3UWsl490P5k00JET2epKJyqeG40o4D3oDIUgTKGhnniU0YcLdDVw==", "session"=>{"email"=>"adamwhite82@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "adamwhite82@gmail.com"], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 97ms (ActiveRecord: 1.7ms)
+
+
+  
+NoMethodError (undefined method `activated?' for #<User:0x00007fbbe9f0c0b0>
+Did you mean?  activation_token):
+  
+app/controllers/sessions_controller.rb:11:in `create'
+Started POST "/login" for 127.0.0.1 at 2018-01-05 14:03:36 -0600
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"tKsH9UqBFgowXi9bllbYtWzmiSYMcjX4qh3UWsl490P5k00JET2epKJyqeG40o4D3oDIUgTKGhnniU0YcLdDVw==", "session"=>{"email"=>"adamwhite82@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "adamwhite82@gmail.com"], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 97ms (ActiveRecord: 1.3ms)
+
+
+  
+NoMethodError (undefined method `activated?' for #<User:0x00007fbbe6469cf0>
+Did you mean?  activate):
+  
+app/controllers/sessions_controller.rb:11:in `create'
+Started POST "/login" for 127.0.0.1 at 2018-01-05 14:54:49 -0600
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"tKsH9UqBFgowXi9bllbYtWzmiSYMcjX4qh3UWsl490P5k00JET2epKJyqeG40o4D3oDIUgTKGhnniU0YcLdDVw==", "session"=>{"email"=>"adamwhite82@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "adamwhite82@gmail.com"], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 96ms (ActiveRecord: 1.7ms)
+
+
+  
+NoMethodError (undefined method `activated?' for #<User:0x00007fbbe5bbcf08>
+Did you mean?  activate):
+  
+app/controllers/sessions_controller.rb:11:in `create'
