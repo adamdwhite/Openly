@@ -20,24 +20,25 @@
 
           <%# TEMPORARY %>
           <%# render ' ' method in this context has the power to forego any following grouped attributes and render by the @users = User.all, insofar as all User objects have been correctly defined %>
-          <%# <%= render @user %>
+          <%# <%= render @user %> 
 
       <li>
         <%= gravatar_for user, size: 50 %>
-        <%= link_to user.name, user %>
+        <%= link_to user.email, user %>
       </li>
-  </ul>
-  
-  <%= will_paginate %>
 
       <tr>
         <td><%= link_to 'Show', user %></td>
         <td><%= link_to 'Edit', edit_user_path(user) %></td>
         <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
+  </ul>
+  
     <% end %>
   </tbody>
 </table>
+
+  <%= will_paginate %>
 
 <br>
 <br>
