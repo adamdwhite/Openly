@@ -13,6 +13,7 @@ class CreateCounselors < ActiveRecord::Migration[5.1]
       t.string :license
       t.string :payment
       t.boolean :agreement
+      t.references :user
 
       t.timestamps
     end

@@ -29,5 +29,16 @@
 # To learn more, please read the Rails Internationalization guide
 # available at http://guides.rubyonrails.org/i18n.html.
 
-en:
-  hello: "Hello world"
+en:  
+  activerecord:
+    models: 
+      user: 
+    attributes:
+      user:
+        is_client: "Account Type:" 
+    errors:
+      models:
+        user:
+          attributes:
+            is_client: 
+              blank: "Please choose account type of either Client or Counselor to continue"

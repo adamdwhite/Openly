@@ -4,7 +4,7 @@ class User < ApplicationRecord
 
   # Definitions in PRIVATE
   before_save   :downcase_email
-  before_create :create_activation_digest
+  # before_create :create_activation_digest
   
   
   # Email and Password Validation
@@ -14,13 +14,12 @@ class User < ApplicationRecord
                     format: { with: VALID_EMAIL_REGEX },
                     uniqueness: {case_sensitive: false}
   validates :password, presence: true, length: { minimum: 6 }, allow_nil: true
-    
-  # def formatted_email
-  #   "#{@name} <#{@email}>"
-  # end
 
   # Terms of service
   validates :terms_of_service, acceptance: true
+    
+  # Account type Client / Counselor 
+  validates :is_client, presence: true
   
   # Returns the hash digest of the given string.
   def User.digest(string)
@@ -55,7 +54,7 @@ class User < ApplicationRecord
 
   # Activates an account.
   def activate
-    update_attribute(:activated,    true)
+    update_attribute(:activated, true)
     update_attribute(:activated_at, Time.zone.now)
   end
 

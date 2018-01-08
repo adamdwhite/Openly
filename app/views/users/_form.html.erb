@@ -5,7 +5,9 @@
   <div class="col-md-6 col-md-offset-3">
     <%= form_for(:user, url: signup_path) do |f| %>
     
-      <%= render 'shared/error_messages' %>
+    <%= render 'shared/error_messages' %>
+
+<%# Email/PW New %>
 
       <%= f.label :email %>
       <%= f.email_field :email, class: 'form-control' %>
@@ -16,8 +18,22 @@
       <%= f.label :password_confirmation, "Confirmation" %>
       <%= f.password_field :password_confirmation, class: 'form-control' %>
 
+<%# Client / Counselor choice %>
+<hr>
+    <div> Select Account Type: <button type="button" class="btn btn-link">
+    <i class="material-icons">help_outline</i>
+    </button> 
+    </div>
+    <%# <%= f.label :is_client, "Client" %> 
+    <%= f.submit 'Client', class: "btn btn-primary" %>
+
+<br>
+<br>
+    <%# <%= f.label :is_client, "Counselor" %> 
+    <%= f.submit 'Counselor', class: "btn btn-primary" %>
+<hr>
+<%# SUBMIT %>
       <%= f.submit "Create My Account", class: "btn btn-primary" %>
-      <%= f.submit yield(:button_text), class: "btn btn-primary" %>
 
     <% end %>
   </div>

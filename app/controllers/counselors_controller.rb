@@ -16,16 +16,17 @@ class CounselorsController < ApplicationController
   def new
     @counselor = Counselor.new
   end
-
+  
   # GET /counselors/1/edit
   def edit
   end
-
+  
   # POST /counselors
   # POST /counselors.json
   def create
     @counselor = Counselor.new(counselor_params)
-
+    @counselor.user_id = session[:user_id]
+    
     respond_to do |format|
       if @counselor.save
         format.html { redirect_to @counselor, notice: 'Counselor was successfully created.' }
