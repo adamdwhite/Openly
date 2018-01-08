@@ -9,6 +9,7 @@ class CreateClients < ActiveRecord::Migration[5.1]
       t.string :alias
       t.string :image
       t.boolean :payment
+      t.references :user
 
       t.timestamps
     end

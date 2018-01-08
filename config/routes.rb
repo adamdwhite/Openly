@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   resources :counselors
   resources :clients
   resources :sessions
+  resources :account_activations, only: [:edit]
 
   # Serve websocket cable requests in-process
   mount ActionCable.server => '/cable'
@@ -17,17 +18,24 @@ Rails.application.routes.draw do
   get  '/about',   to: 'static_pages#about'
   get  '/contact', to: 'static_pages#contact'
   
-  # APP, all USERS 
+  # USERS 
   get  '/signup',  to: 'users#new'
   post  '/signup',  to: 'users#create'
   
-  # and USERS' SESSIONS
+  # SESSIONS
   get    '/login',   to: 'sessions#new'
   post   '/login',   to: 'sessions#create'
   delete '/logout',  to: 'sessions#destroy'
 
   # ACCOUNTS / REGISTRATIONS
+  get '/client', to: 'clients#new'
+  post '/client', to: 'clients#create'
 
+  get '/counselor', to: 'counselors#new'
+  post '/counselor', to: 'counselors#create'
+
+  # ROOMS "Talks" and MESSAGES therein
+  
 
 end
   
