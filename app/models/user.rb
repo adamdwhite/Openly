@@ -19,7 +19,7 @@ class User < ApplicationRecord
   validates :terms_of_service, acceptance: true
     
   # Account type Client / Counselor 
-  validates :is_client, presence: true
+  # validates :is_client, presence: true
   
   # Returns the hash digest of the given string.
   def User.digest(string)

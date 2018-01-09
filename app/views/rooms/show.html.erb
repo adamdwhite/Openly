@@ -1,12 +1,16 @@
 <%# <h1>Rooms#show</h1> %>
 
-<h1>Your Conversation With</h1>
-  
+<h1>This Talk:</h1>
+<p> begun on #{timestamp} </p>
+<p> between #{@user.client_id} and #{@user.counselor.id}
+
+<hr>
+
 <div id="messages">
   <%= render @messages %>
 </div>
   
 <form>
-  <label>Say something:</label><br>
+  <label>#{awaiting message} </label><br>
   <input type="text" data-behavior="room_speaker">
 </form>
