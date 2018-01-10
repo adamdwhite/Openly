@@ -30,13 +30,19 @@ class UsersController < ApplicationController
   # POST /users.json
   def create
     @user = User.new(user_params)
-    if @user.save
-      log_in @user
-      flash.now[:success] = "Welcome to Openly! Please visit your Account section to complete your profile."
-      redirect_to @user
-    else
-      render 'new'
-    end
+      if params[:commit] == 'Client'
+          @user.toggle(:is_client)
+      elsif params[:commit] == 'Counselor'
+          @user.is_client = false
+      end 
+
+      if @user.save
+        log_in @user
+        flash[:success] = "Welcome to Openly! Please visit your Account section to complete your profile."
+        redirect_to @user
+      else
+        render 'new'
+      end
   end
 
   # PATCH/PUT /users/1

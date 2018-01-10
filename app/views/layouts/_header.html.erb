@@ -1,15 +1,24 @@
 <%# NAVBAR Contents %>
-  
-    <header class="navbar navbar-fixed-top navbar-inverse">
-      <div class="container">
-        <%= link_to "Openly", about_path, id: "logo" %>
-        <nav>
+  <nav class="navbar navbar-toggleable-md navbar-light bg-faded">
+    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"    data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon">
+      </span>
+    </button>
         
-          <%# HELP Sub NAV %>
-          <ul class="nav navbar-nav navbar-right">
-            <li><%= link_to "Help", help_path %>
-            <%# <i class="material-icons">help</i> %>
-            </li>
+      <%# LOGO TITLE, left-align %>
+      <a class="navbar-brand" id="icon_logo">
+        <%= link_to "Openly", about_path, id: "logo" %>
+        <%# <i class="material-icons">fingerprint</i> %>
+      </a>
+
+<%# right-align, hamburger responsive %>
+        
+        
+      <%# HELP Sub NAV %>
+      <ul class="nav navbar-nav navbar-right">
+        <li><%= link_to "Help", help_path %>
+        <%# <i class="material-icons">help</i> %>
+        </li>
           
           <%# if logged in as ADMIN %>
               <%# <li><%= link_to "Users", users_path %>
@@ -62,8 +71,6 @@
           <% end %> 
 
           </ul>
-        </nav>
       </div>
     </header>
-
-
+</nav>
