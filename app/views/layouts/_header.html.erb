@@ -1,76 +1,79 @@
-<%# NAVBAR Contents %>
-  <nav class="navbar navbar-toggleable-md navbar-light bg-faded">
-    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"    data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon">
-      </span>
-    </button>
-        
-      <%# LOGO TITLE, left-align %>
-      <a class="navbar-brand" id="icon_logo">
-        <%= link_to "Openly", about_path, id: "logo" %>
-        <%# <i class="material-icons">fingerprint</i> %>
-      </a>
+<%# NAVBAR Contents %>  
+<nav class="d-flex navbar navbar-expand-lg navbar-light bg-light justify-content-end">
 
-<%# right-align, hamburger responsive %>
-        
-        
-      <%# HELP Sub NAV %>
-      <ul class="nav navbar-nav navbar-right">
-        <li><%= link_to "Help", help_path %>
-        <%# <i class="material-icons">help</i> %>
-        </li>
+  <%# LOGO TITLE, left-align %>
+  <a class="navbar-brand" id="icon_logo">
+    <%= link_to "Openly", about_path, id: "logo" %>
+    <%# <%= image_tag('openly-logo-2 (1).png')%> 
+  </a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon">
+    </span>
+  </button>
+
+  <%# Right-aligned NAV sections, hamburger-response %>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav">
+            
+<%# HELP Sub NAV %>
+      <li class="nav-item active">
+        <a class="nav-link" href="#">
+          <%= link_to "Help", help_path %>
+        </a>
+      </li>
           
-          <%# if logged in as ADMIN %>
-              <%# <li><%= link_to "Users", users_path %>
-              <%# </li> %> 
+<%# if logged in as ADMIN %>
+      <%# <li><%= link_to "Users", users_path %>
+      <%# </li> %> 
+  
+<% if logged_in? %>          
 
-            <% if logged_in? %>          
-
-                <%# TALK Sub Nav %>
-                <li><%= link_to "Talk", '#' %>
-                </li> 
-
-                <%# ACCOUNT Sub Nav %>
-                <li class="dropdown">
-                  <a class="dropdown-toggle" data-toggle="dropdown">
-                    Account <span class="caret"></span>
-                  </a>
-                  <ul class="dropdown-menu">
+<%# TALK Sub Nav %>
+      <li class="nav-item active">
+        <a class="nav-link" href="#">
+          <%= link_to "Talk", '#' %>
+        </a>
+      </li>
 
 <%# If User.is_client = true, cannot see Counselor, and v/v.  %>
 
-            <%# show %>
-                    <%# CLIENT Profile %>
-                    <li><%= link_to "Client Profile", '#' %>
-                    </li>
-            
-            <%# else %>
-            
-                    <%# COUNSELOR Profile %>
-                    <li><%= link_to "Counselor Profile", '#' %>
-                    </li>
-
-                    <%# SETTINGS - Application %>
-                    <li><%= link_to "Settings", edit_user_path(current_user) %>
-                    </li>
-
-                    <li class="divider">
-                    </li>
-                
-                    <%# LOGOUT %>
-                    <li>
-                      <%= link_to "Log out", logout_path, method: :delete %>
-                      <%# <i class="material-icons">offline_pin</i> %>
-                    </li>
-                  </ul>
-                </li>
+<%# ACCOUNT Sub Nav %>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Account 
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+<%# is_client? %>
+<%# CLIENT Profile %>
+          <a class="dropdown-item">
+          <%= link_to "Client Profile", clients_path %>
+          </a>              
+<%# else %>           
+<%# COUNSELOR Profile %>
+          <a class="dropdown-item">
+          <%= link_to "Counselor Profile", counselors_path %>
+          </a>  
+<%# SETTINGS - Application %>
+          <a class="dropdown-item">              
+          <%= link_to "Settings", edit_user_path(current_user) %>
+          </a>               
+            <div class="dropdown-divider"></div>
+<%# LOGOUT %>
+          <a class="dropdown-item">                        
+          <%= link_to "Log out", logout_path, method: :delete %>
+          </a>
+        </div>
+      </li>
 <%# end %>
-          <%# LOGIN %>
-          <% else %>
-            <li><%= link_to "Log In", login_path %></li>
-          <% end %> 
+<%# LOGIN %>
+<% else %>
+      <li class="nav-item">
+      <a class="nav-link">
+      <%= link_to "Log In", login_path %>
+      </a>
+      </li>
+<% end %> 
 
-          </ul>
-      </div>
-    </header>
+      </ul>
+    </div> 
 </nav>

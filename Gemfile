@@ -22,9 +22,9 @@ gem 'jquery-rails'
 # Tether 
 gem 'tether-rails'
 # Bootstrap
-gem 'bootstrap-sass'
+# gem 'bootstrap-sass'
 # 
-gem 'bootstrap', '~> 4.0.0.alpha6'
+gem 'bootstrap', '~> 4.0.0.beta3'
 # 
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'
