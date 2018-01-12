@@ -1,7 +1,5 @@
 Rails.application.routes.draw do
   
-  get 'rooms/show'
-  
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   
   resources :users do
@@ -31,21 +29,28 @@ Rails.application.routes.draw do
   post   '/login',   to: 'sessions#create'
   delete '/logout',  to: 'sessions#destroy'
 
-  # ACCOUNTS / REGISTRATIONS
+  # CLIENTS
   root 'clients#index'
   get '/client', to: 'clients#new'
   post '/client', to: 'clients#create'
   delete '/client', to: 'clients#destroy'
 
-  root 'clients#index'
+  # COUNSELORS
+  root 'counselors#index'
   get '/counselor', to: 'counselors#new'
   post '/counselor', to: 'counselors#create'
   delete '/counselor', to: 'counselors#destroy'
 
-  # CHATS "Talks" and MESSAGES therein
+  # CHATS "Talk" 
   root 'chats#index'
-  get '/chat', to: 'chats#show'
-  get '/chat', to: 'chats#new'
-  post '/chat', to: 'chats#create'
+  get '/talk', to: 'chats#show'
+  get '/talk', to: 'chats#new'
+  post '/talk', to: 'chats#create'
  
+  # MESSAGES 
+  root 'messages#index'
+  get '/message', to: 'messages#show'
+  get '/message', to: 'messages#new'
+  post '/message', to: 'messages#create'
+
 end

@@ -2,12 +2,7 @@
 <html>
   <head>
     <title><%= full_title (yield(:title)) %></title>
-    <%= csrf_meta_tags %>
-
-    <%= action_cable_meta_tag %>
-
-    <%= favicon_link_tag asset_path('openly-logo-2 (1).png'), :rel => 'icon', :type =>  'image/png' %>
-
+   
     <%# Bootstrap link %>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">    
     
@@ -17,10 +12,18 @@
 
     <%# Google Fonts %>
     <link href="https://fonts.googleapis.com/css?family=Lora" rel="stylesheet">
+   
+    <%= csrf_meta_tags %>
 
-    <%= stylesheet_link_tag    'application', media: 'all',
-                                              'data-turbolinks-track': 'reload' %>
+    <%= action_cable_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all','data-turbolinks-track': 'reload' %>
+
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+    <%= favicon_link_tag asset_path('openly-logo-2 (1).png'), :rel => 'icon', :type =>  'image/png' %>
+
+
     
     <%# PARTIAL - IE9 %>
     <%= render 'layouts/shim' %>

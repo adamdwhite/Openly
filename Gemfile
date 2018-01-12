@@ -22,7 +22,7 @@ gem 'jquery-rails'
 # Tether 
 gem 'tether-rails'
 # Bootstrap
-# gem 'bootstrap-sass'
+gem 'bootstrap-sass'
 # 
 gem 'bootstrap', '~> 4.0.0.beta3'
 # 
