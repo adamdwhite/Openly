@@ -10,7 +10,7 @@
 App.cable = ActionCable.createConsumer()
 
 
-# Below the code for the .JS version of this file. All guides assume this file to be a .coffee file instead, which the code above is written for. 
+# Below the code for the .JS version of this file. All documentation assumes this file to be a .coffee file instead, which the code above is written for. 
 
 ### 
 (function() {

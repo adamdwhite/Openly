@@ -2,21 +2,28 @@
 <html>
   <head>
     <title><%= full_title (yield(:title)) %></title>
-    <%= csrf_meta_tags %>
-
+   
     <%# Bootstrap link %>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">    
+    
     <%# Material Icons cdn %>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet">
 
     <%# Google Fonts %>
     <link href="https://fonts.googleapis.com/css?family=Lora" rel="stylesheet">
+   
+    <%= csrf_meta_tags %>
 
-    <%= stylesheet_link_tag    'application', media: 'all',
-                                              'data-turbolinks-track': 'reload' %>
+    <%= action_cable_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all','data-turbolinks-track': 'reload' %>
+
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+    <%= favicon_link_tag asset_path('openly-logo-2 (1).png'), :rel => 'icon', :type =>  'image/png' %>
+
+
     
     <%# PARTIAL - IE9 %>
     <%= render 'layouts/shim' %>
@@ -34,15 +41,23 @@
       <% end %>
     </div>
 
-    <!-- jQuery library -->
+    <!-- jQuery librarIES... -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
-    <!-- Latest compiled JavaScript -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-
-
+    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+    
     <%# PARTIAL - FOOTER  %>
     <%= render 'layouts/footer' %>
+
+    <%# BOOTSTRAP and its plugins: %>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+    
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js" integrity="sha384-a5N7Y/aK3qNeh15eJKGWxsqtnX/wWdSZSKp+81YjTmS15nvnvxKHuzaWwXHDli+4" crossorigin="anonymous"></script>
 
   </body>
 </html>

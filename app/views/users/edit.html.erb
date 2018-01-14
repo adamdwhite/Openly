@@ -1,7 +1,9 @@
-<% provide(:title, "Edit user") %>
+<% provide(:title, "Edit User") %>
 <% provide(:button_text, 'Save changes') %>
 
 <h1>Update your profile</h1>
+
+<%# Update EMAIL / PW %>
 
 <div class="row">
   <div class="col-md-6 col-md-offset-3">
@@ -16,6 +18,11 @@
 
       <%= f.label :password_confirmation, "Confirmation" %>
       <%= f.password_field :password_confirmation, class: 'form-control' %>
+
+<hr>
+<h2>Account Type:</h2>
+<p> You may not change your account type here. Each Client and Counselor has their own account. So, if you would like to create a new account of a different type, please log out and follow the prompts to "Sign Up". 
+<hr>
 
       <%= f.submit "Save changes", class: "btn btn-primary" %>
     <% end %>

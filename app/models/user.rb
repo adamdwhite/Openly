@@ -1,5 +1,9 @@
 class User < ApplicationRecord
 
+  has_many :messages
+  has_many :subscriptions
+  has_many :chats, through: :subscriptions
+
   attr_accessor :remember_token, :activation_token, :reset_token
 
   # Definitions in PRIVATE
@@ -19,7 +23,7 @@ class User < ApplicationRecord
   validates :terms_of_service, acceptance: true
     
   # Account type Client / Counselor 
-  validates :is_client, presence: true
+  # validates :is_client, presence: true
   
   # Returns the hash digest of the given string.
   def User.digest(string)
@@ -76,5 +80,12 @@ class User < ApplicationRecord
     self.activation_digest = User.digest(activation_token)
   end
 
+  def existing_chats_users
+    existing_chat_users = []
+    self.chats.each do |chat|
+    existing_chat_users.concat(chat.subscriptions.where.not(user_id: self.id).map {|subscription| subscription.user})
+    end
+    existing_chat_users.uniq
+  end
 
 end
