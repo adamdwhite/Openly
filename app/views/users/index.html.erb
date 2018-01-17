@@ -13,7 +13,7 @@
 
 <%# Use for any block one wishes to paginate. Must be reflected in Gemfile wih gems of 'will_paginate' and 'bootstrap-will_paginate' %>
 
-  <%= will_paginate %>
+  <%= will_paginate%>
 
   <ul class="users">
     <% @users.each do |user| %>
@@ -28,9 +28,9 @@
       </li>
 
       <tr>
-        <td><%= link_to 'Show', user %></td>
-        <td><%= link_to 'Edit', edit_user_path(user) %></td>
-        <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Show', user, id: "signup" %></td>
+        <td><%= link_to 'Edit', edit_user_path(user), id: "signup" %></td>
+        <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' }, id: "signup" %></td>
       </tr>
     <% end %>
   </ul>
@@ -43,4 +43,4 @@
 
 <br>
 <br>
-    <p id="new_user">New to Openly? <%= link_to "Sign Up", signup_path, class: "btn btn-sm btn-primary" %></p>
+    <p id="new_user">New to Openly? <%= link_to "Sign Up", signup_path, class: "btn btn-sm btn-primary", id:"signup" %></p>
