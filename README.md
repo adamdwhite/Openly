@@ -10,14 +10,47 @@
 
 * Diagramming, mockups, and planning hosted on Trello: [https://trello.com/###endpoint]
 
+
 ## Table of Contents:
+
+* To Run the App
+* Technologies Used
 * Application Specifications
   * MVP
-    * _Stretch Goals will be in italics throughout this document _
+    * _Stretch Goals will be in italics throughout this document_
 * Use Cases / Stories
-* Technology Used
 * Wireframes: attachments WIP
 * ERD: WIP link https://drive.google.com/file/d/1k38b-82gyJH1ziC127DMtf_lDkpSbcVB/view?usp=sharing
+
+
+## To Run the App:
+
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
+
+1. ```git clone https://github.com...```
+2. run ```ruby schema.rb``` in db folder
+3. The database path environmental variable: in the files the database path is set to an
+    enviromental variable which you will need to configure in you .zshrc or .bash file
+        - follow these instructions:
+        [instructions](https://gist.github.com/iest/58692bf1001b0424c257) 
+        to create the variable and set it to the absolute path of the Openly.sqlite3 file
+4. Based on the context of the user's environment, perform some or all of the following actions/commands: 
+  * Gemfile alterations...
+  * bundle install 
+  * rails db:seed 
+  * rails db:migrate
+  * rails server 
+  * Browser: to properly demonstrate the app, open two seperate windows in your browser,
+    one as http://localhost:3000 and one as http://127.0.0.1:3000/, logging in with / creating two separate accounts 
+
+## Built With
+
+* Ruby
+* Rails 5
+* ActionCable
+* SQL
+* Bootstrap, Tether, and SASS 
+* Other assorted Gems 
 
 ## Openly Application Specifications
 
@@ -169,32 +202,7 @@
     * The COUNSELOR may discontinue the conversation at any point, but must provide a reason why, by way of a message prompt which is then sent to an ADMINISTRATOR.
 
 
-## To Run the App:
-
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
-
-1. ```git clone https://github.com...```
-2. run ```ruby schema.rb``` in db folder
-3. The database path environmental variable: in the files the database path is set to an
-    enviromental variable which you will need to configure in you .zshrc or .bash file
-        - follow these instructions:
-        [instructions](https://gist.github.com/iest/58692bf1001b0424c257) 
-        to create the variable and set it to the absolute path of the bangazon_sqlite3.sqlite3 file
-4. Based on the context of the user's environment, perform some or all of the following actions/commands: 
-  * Gemfile alterations 'bcrypt' and 'wdm'
-  * bundle install 
-  * rails db:seed 
-  * rails db:migrate
-  * rails server 
-  * see localhost:3000 in your browser. 
-
-
-## Built With
-
-* Ruby
-* Rails 
-* SQL
-* Bunch more shit peace fingers
+// To be continued... :)
 
 ## Authors
 
@@ -202,5 +210,6 @@ Adam D. White
 
 ## Acknowledgments
 
-* Many thanks for the patient assistance from:  
-Jim Vickery, Hannah Hall, Jisie David, Brooke Wittenberg, Cohort 21. 
+* Many thanks for assistance from these kind folks:
+
+Jim Vickery, Hannah Hall, Jisie David, Brooke Wittenberg, and Cohort 21 of The Nashville Software School. 
