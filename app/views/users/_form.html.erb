@@ -23,7 +23,7 @@
   <h2>Account Type:
     <div type="button" class="btn btn-link" data-toggle="tooltip" data-placement="top" title="Please select either Client or Counselor. One Client or Counselor is permitted per each new account. If Client is selected, you may finish your Account registration and get started talking right away.
         If Counselor is selected, your account registration will undergo a verification process.">
-      <i class="material-icons">help_outline</i>
+      <i class="material-icons" id"helpbtn">help_outline</i>
     </div>
   </h2>
     <%= f.submit 'Client', class: "btn btn-outline-info" %>
@@ -34,7 +34,7 @@
 
 
 <%# SUBMIT %>
-      <%= f.submit "Create My Account", class: "btn btn-primary" %>
+      <%= f.submit "Create My Account", class: "btn btn-primary", id:"signup" %>
 
     <% end %>
   </div>

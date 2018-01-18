@@ -1,5 +1,5 @@
 <%# NAVBAR Contents %>  
-<nav class="d-flex navbar navbar-expand-lg navbar-light bg-light justify-content-end">
+<nav class="d-flex navbar navbar-expand-lg navbar-light" id="topnav">
 
   <%# LOGO TITLE, left-align %>
   <a class="navbar-brand" id="icon_logo">
@@ -11,15 +11,13 @@
     </span>
   </button>
 
-  <%# Right-aligned NAV sections, hamburger-response %>
+  <%# Right-floated NAV sections, hamburger-response %>
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav">
+    <ul class="navbar-nav mr-auto">
             
 <%# HELP Sub NAV %>
       <li class="nav-item active">
-        <a class="nav-link" href="#">
-          <%= link_to "Help", help_path %>
-        </a>
+          <%= link_to "Help", help_path, id: "help"%>
       </li>
           
 <%# if logged in as ADMIN %>
@@ -30,16 +28,14 @@
 
 <%# TALK Sub Nav %>
       <li class="nav-item active">
-        <a class="nav-link" href="#">
-          <%= link_to "Talk", 'talk_path' %>
-        </a>
+           <%= link_to "Talk", talk_path, id: "talk"%>
       </li>
 
 <%# If User.is_client = true, cannot see Counselor, and v/v.  %>
 
 <%# ACCOUNT Sub Nav %>
       <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <a class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" id="account">
             Account 
         </a>
         
@@ -47,21 +43,21 @@
 <%# is_client? %>
 <%# CLIENT Profile %>
           <a class="dropdown-item">
-          <%= link_to "Client Profile", clients_path %>
+          <%= link_to "Client Profile", clients_path, id: "client"%>
           </a>              
 <%# else %>           
 <%# COUNSELOR Profile %>
           <a class="dropdown-item">
-          <%= link_to "Counselor Profile", counselors_path %>
+          <%= link_to "Counselor Profile", counselors_path, id: "counselor"%>
           </a>  
 <%# SETTINGS - Application %>
           <a class="dropdown-item">              
-          <%= link_to "Settings", edit_user_path(current_user) %>
+          <%= link_to "Settings", edit_user_path(current_user), id: "settings"%>
           </a>               
             <div class="dropdown-divider"></div>
 <%# LOGOUT %>
           <a class="dropdown-item">                        
-          <%= link_to "Log out", logout_path, method: :delete %>
+          <%= link_to "Log out", logout_path, method: :delete, id: "logout"%>
           </a>
         </div>
       </li>
@@ -75,6 +71,6 @@
       </li>
 <% end %> 
 
-      </ul>
-    </div> 
+    </ul>
+  </div> 
 </nav>

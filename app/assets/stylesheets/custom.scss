@@ -3,10 +3,6 @@
 
 /* universal */
 
-#fingerprint {
-    font-size: 75px;
-}
-
 body {
     font-family: 'Lora';
     padding-top: 60px;
@@ -28,8 +24,30 @@ textarea {
     margin-bottom: 10px;
 }
 
+// Static Page -- HOME
+#welcome {
+    background-color: rgb(255, 250, 244);
+}
+
+#editbtn,
+#backbtn,
+#loginbtn,
+#signup {
+    background-color: rgb(65, 196, 87);
+    color: rgb(255, 250, 244);
+    border-color: white;
+}
+
+#signup:hover {
+    background-color: rgb(137, 235, 153);
+}
+
 
 /* typography */
+
+#fingerprint {
+    font-size: 75px;
+}
 
 h1,
 h2,
@@ -64,25 +82,54 @@ p {
 
 /* header */
 
+#topnav {
+    background-color: rgb(255, 250, 244);
+}
+
 #logo {
+    display: flex;
     float: left;
     margin-right: 10px;
-    font-size: 1.7em;
-    color: rgb(94, 231, 117);
-    // text-transform: uppercase;
+    font-size: 2.5em;
+    color: rgb(65, 196, 87);
     letter-spacing: -1px;
-    padding-top: 9px;
+    padding: 10px;
     font-weight: bold;
+    vertical-align: -webkit-baseline-middle;
 }
 
 #logo:hover {
-    color: rgb(182, 253, 194);
-    text-decoration: none;
+    color: rgb(65, 196, 87);
+    background-color: transparent;
 }
 
-// .top_nav {
-//     background-color: rgb(51, 53, 36);
-// }
+#help,
+#talk,
+#account {
+    float: right;
+    padding: 10px;
+    font-size: 1.5em;
+    color: rgb(77, 45, 45);
+    vertical-align: -webkit-baseline-middle;
+}
+
+#help:hover,
+#talk:hover,
+#account:hover {
+    background-color: transparent;
+}
+
+#client,
+#counselor,
+#settings,
+#logout {
+    padding: 5px;
+    font-size: 1em;
+    color: rgb(77, 45, 45);
+    background-color: transparent;
+    vertical-align: -webkit-baseline-middle;
+}
+
 
 /* footer */
 
@@ -98,7 +145,8 @@ footer a {
 }
 
 footer a:hover {
-    color: #222;
+    color: lightcoral;
+    background-color: transparent;
 }
 
 footer small {
