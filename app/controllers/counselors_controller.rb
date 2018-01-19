@@ -29,7 +29,7 @@ class CounselorsController < ApplicationController
     
     respond_to do |format|
       if @counselor.save
-        format.html { redirect_to @counselor, notice: 'Counselor was successfully created.' }
+        format.html { redirect_to @counselor, notice: 'Thank you for submitting your application to become a Counselor. We will notify you via email once your submission has been reviewed.' }
         format.json { render :show, status: :created, location: @counselor }
       else
         format.html { render :new }

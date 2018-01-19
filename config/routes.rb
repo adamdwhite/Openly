@@ -23,6 +23,9 @@ Rails.application.routes.draw do
   # USERS 
   get  '/signup',  to: 'users#new'
   post  '/signup',  to: 'users#create'
+  get 'user/:id', to: 'users#show'
+  patch 'user/:id/edit', to: 'users#update'
+  delete 'user/:id', to: 'users#destroy'
   
   # SESSIONS
   get    '/login',   to: 'sessions#new'

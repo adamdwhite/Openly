@@ -23,15 +23,16 @@
 <h2>Account Type:</h2>
 <p> You may not change your account type here. Each Client and Counselor has their own account. So, if you would like to create a new account of a different type, please log out and follow the prompts to "Sign Up". 
 <hr>
-
-      <%= f.submit "Save changes", class: "btn btn-primary" %>
-    <% end %>
-
+    
     <div class="gravatar_edit">
       <%= gravatar_for @user %>
-      <a href="http://gravatar.com/emails" target="_blank">change</a>
+      <a href="http://gravatar.com/emails" target="_blank"><br>Change Image</a>
     </div>
+
+<hr>
+      <%= f.submit "Save changes", class: "btn btn-primary", id: "signup"%>
+    <% end %>
   </div>
 </div>
 
-<%= link_to 'Back', users_path %>
+<%= link_to 'Back', users_path, id: "backbtn" %>
