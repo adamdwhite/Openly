@@ -79,12 +79,14 @@ class User < ApplicationRecord
     self.activation_digest = User.digest(activation_token)
   end
 
-  def existing_chats_users
-    existing_chat_users = []
-    self.chats.each do |chat|
-    existing_chat_users.concat(chat.subscriptions.where.not(user_id: self.id).map {|subscription| subscription.user})
-    end
-    existing_chat_users.uniq
-  end
+	def existing_chats_users
+		existing_chat_users = []
+		chats.each do |chat| 
+  		chat.subscriptions.each do |subscription|
+  			existing_chat_users << subscription.user if subscription.user != self
+  		end
+  	end
+  	existing_chat_users
+	end
 
 end
