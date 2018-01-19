@@ -5,65 +5,114 @@
 
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>First Name:</strong>
-  <%= @counselor.first_name %>
-</p>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">
+      <p>
+      <strong>First Name:</strong>
+      <%= @counselor.first_name %>
+      </p>
+      </th>
+      
+      <th scope="col">
+      <p>
+      <strong>Last Name:</strong>
+      <%= @counselor.last_name %>
+      </p>
+      </th>
 
-<p>
-  <strong>Last Name:</strong>
-  <%= @counselor.last_name %>
-</p>
+      <th scope="col">
+      <p>
+      <strong>Age:</strong>
+      <%= @counselor.age %>
+      </p>
+      </th>
+      
+      <th scope="col">
+      <p>
+      <strong>Gender:</strong>
+      <%= @counselor.gender %>
+      </p>
+      </th>
 
-<p>
-  <strong>Age:</strong>
-  <%= @counselor.age %>
-</p>
+      <th scope="col">
+      <p>
+      <strong>Zipcode:</strong>
+      <%= @counselor.zipcode %>
+      </p>
+      </th>
 
-<p>
-  <strong>Gender:</strong>
-  <%= @counselor.gender %>
-</p>
+      <th scope="col">
+      <p>
+      <strong>Image:</strong>
+      <%= @counselor.image %>
+      </p>
+      </th>
 
-<p>
-  <strong>Zipcode:</strong>
-  <%= @counselor.zipcode %>
-</p>
+      <th scope="col">
+      <p>
+      <strong>Social Security Number:</strong>
+      <%= @counselor.ssn %>
+      </p>
+      </th>
 
-<p>
-  <strong>Image:</strong>
-  <%= @counselor.image %>
-</p>
+      <th scope="col">
+      <p>
+      <strong>Occupational Title:</strong>
+      <%= @counselor.occ_title %>
+      </p>
+      </th>
+      
+      <th scope="col">
+      <p>
+      <strong>U.S. State of License:</strong>
+      <%= @counselor.occ_state %>
+      </p>
+      </th>
+      
+      <th scope="col">
+      <p>
+      <strong>License Number:</strong>
+      <%= @counselor.license %>
+      </p>
+      </th>
+      
+      <th scope="col">
+      <p>
+      <strong>Payment:</strong>
+      <%= @counselor.payment %>
+      </p>
+      </th>
+      
+      <th scope="col">
+      <p>
+      <strong>Agreement:</strong>
+      <%= @counselor.agreement %>
+      </p>
+      </th>
+    
+    </tr>
+  </thead>
 
-<p>
-  <strong>Social Security Number:</strong>
-  <%= @counselor.ssn %>
-</p>
+  <%# <tbody>
+    <tr>
+      <th scope="row">1</th>
+      <td>
+      </td>
+    </tr>
+    <tr>
+      <th scope="row">2</th>
+      <td>
+      </td>
+    </tr>
+    <tr>
+      <th scope="row">3</th>
+      <td>
+      </td>
+    </tr>
+  </tbody>
+</table> %>
 
-<p>
-  <strong>Occupational Title:</strong>
-  <%= @counselor.occ_title %>
-</p>
-
-<p>
-  <strong>U.S. State of License:</strong>
-  <%= @counselor.occ_state %>
-</p>
-
-<p>
-  <strong>License Number:</strong>
-  <%= @counselor.license %>
-</p>
-
-<p>
-  <strong>Payment:</strong>
-  <%= @counselor.payment %>
-</p>
-
-<p>
-  <strong>Agreement:</strong>
-  <%= @counselor.agreement %>
-</p>
-
-<%= link_to 'Edit', edit_counselor_path(@counselor) %> |
-<%= link_to 'Back', counselors_path %>
+<%= link_to 'Edit', edit_counselor_path(@counselor), id: "editbtn" %> |
+<%= link_to 'Back', counselors_path, id:"backbtn" %>

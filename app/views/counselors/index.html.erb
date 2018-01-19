@@ -48,9 +48,9 @@
         <td><%= counselor.license %></td>
         <td><%= counselor.payment %></td>
         <td><%= counselor.agreement %></td>
-        <td><%= link_to 'Show', counselor %></td>
-        <td><%= link_to 'Edit', edit_counselor_path(counselor) %></td>
-        <td><%= link_to 'Destroy', counselor, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Show', counselor, id: "showbtn" %></td>
+        <td><%= link_to 'Edit', edit_counselor_path(counselor), id: "editbtn" %></td>
+        <td><%= link_to 'Destroy', counselor, method: :delete, data: { confirm: 'Are you sure?' }, id: "deletebtn" %></td>
       </tr>
     <% end %>
   </tbody>
@@ -58,4 +58,4 @@
 
 <br>
 
-<%= link_to 'New Counselor', new_counselor_path %>
+<%= link_to 'Submit a New Counselor Application', new_counselor_path, id: "signup" %>

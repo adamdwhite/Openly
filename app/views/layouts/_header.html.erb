@@ -31,25 +31,31 @@
            <%= link_to "Talk", talk_path, id: "talk"%>
       </li>
 
-<%# If User.is_client = true, cannot see Counselor, and v/v.  %>
 
 <%# ACCOUNT Sub Nav %>
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" id="account">
             Account 
         </a>
-        
+
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-<%# is_client? %>
+
+<%# If current user is a client, they cannot see any Counselor info, and vise-versa:  %>
+<% if current_user.is_client? %>
+
 <%# CLIENT Profile %>
           <a class="dropdown-item">
-          <%= link_to "Client Profile", clients_path, id: "client"%>
+          <%= link_to "Client Profile", new_client_path, id: "client"%>
           </a>              
-<%# else %>           
+
+<% else %>          
+
 <%# COUNSELOR Profile %>
           <a class="dropdown-item">
-          <%= link_to "Counselor Profile", counselors_path, id: "counselor"%>
+          <%= link_to "Counselor Profile", new_counselor_path, id: "counselor"%>
           </a>  
+<% end %>
+
 <%# SETTINGS - Application %>
           <a class="dropdown-item">              
           <%= link_to "Settings", edit_user_path(current_user), id: "settings"%>
@@ -61,13 +67,11 @@
           </a>
         </div>
       </li>
-<%# end %>
-<%# LOGIN %>
+
 <% else %>
-      <li class="nav-item">
-      <a class="nav-link">
-      <%= link_to "Log In", login_path, id: "login" %>
-      </a>
+<%# LOGIN %>
+      <li class="nav-item active">
+      <%= link_to "| Log In", login_path, id: "login" %>
       </li>
 <% end %> 
 

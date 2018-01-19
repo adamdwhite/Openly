@@ -30,16 +30,27 @@ textarea {
 }
 
 #editbtn,
+#showbtn,
+#editbtn,
+#deletebtn,
 #backbtn,
 #loginbtn,
 #signup {
-    background-color: rgb(65, 196, 87);
-    color: rgb(255, 250, 244);
-    border-color: white;
+    color: rgb(65, 196, 87);
+    background-color: transparent;
+    font-size: 1.25em;
 }
 
+#editbtn:hover,
+#showbtn:hover,
+#editbtn:hover,
+#deletebtn:hover,
+#backbtn:hover,
+#loginbtn:hover,
 #signup:hover {
-    background-color: rgb(137, 235, 153);
+    color: rgb(137, 235, 153);
+    background-color: transparent;
+    font-size: 1.25em;
 }
 
 
@@ -103,9 +114,11 @@ p {
     background-color: transparent;
 }
 
+// ON the NAVBAR 
 #help,
 #talk,
-#account {
+#account,
+#login {
     float: right;
     padding: 10px;
     font-size: 1.5em;
@@ -115,15 +128,15 @@ p {
 
 #help:hover,
 #talk:hover,
-#account:hover {
+#account:hover,
+#login:hover {
     background-color: transparent;
 }
 
 #client,
 #counselor,
 #settings,
-#logout,
-#login {
+#logout {
     padding: 5px;
     font-size: 1em;
     color: rgb(77, 45, 45);

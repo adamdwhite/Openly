@@ -28,9 +28,9 @@
       </li>
 
       <tr>
-        <td><%= link_to 'Show', user, id: "signup" %></td>
-        <td><%= link_to 'Edit', edit_user_path(user), id: "signup" %></td>
-        <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' }, id: "signup" %></td>
+        <td><%= link_to 'Show', user, id: "showbtn" %></td>
+        <td><%= link_to 'Edit', edit_user_path(user), id: "editbtn" %></td>
+        <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' }, id: "deletebtn" %></td>
       </tr>
     <% end %>
   </ul>
@@ -43,4 +43,4 @@
 
 <br>
 <br>
-    <p id="new_user">New to Openly? <%= link_to "Sign Up", signup_path, class: "btn btn-sm btn-primary", id:"signup" %></p>
+    <p id="new_user">New to Openly? <%= link_to "Sign Up", signup_path, class: "btn btn-success", id:"signup" %></p>

@@ -1,7 +1,15 @@
-<%# CREATE NEW COUNSELOR form %>
+<%# Submit NEW COUNSELOR application form %>
 
 <%= form_with(model: counselor, local: true) do |form| %>
 
+<h5>As a licensed counselor, please complete this form and submit your profile for verification. 
+<br>
+<br>This is to ensure we find you the best clients, and that our clients will receive quality, professional therapy.  
+<br>
+<br>If you have questions, please refer to the Help section. 
+</h5> 
+
+<hr> 
 
   <% if counselor.errors.any? %>
     <div id="error_explanation">
@@ -28,7 +36,7 @@
   <div class="field">
     <%= form.label :age, "Date of Birth" %>
     <%= form.date_field :age, id: :counselor_age %>
-    <a>why we need to know this...</a>
+    <%# <a>why we need to know this...</a> %>
   </div>
 
   <div class="field">
@@ -41,10 +49,10 @@
     <%= form.search_field :zipcode, id: :counselor_zipcode %>
   </div>
 
-  <div class="field">
-    <%= form.label :image %>
-    <%= form.text_field :image, id: :counselor_image %>
-  </div>
+  <%# <div class="field"> %>
+    <%# <%= form.label :image %> 
+    <%# <%= form.text_field :image, id: :counselor_image %> 
+  <%# </div> %>
 
   <div class="field">
     <%= form.label :ssn, "Social Security #" %>
@@ -67,7 +75,7 @@
   </div>
 
 <h2> Payment Information </h2> 
-<i class="material-icons">help</i>
+<i class="material-icons" id="signup">help</i>
 <hr>
 
   <div class="field">
@@ -82,11 +90,19 @@
 
   <div class="field">
     <%= form.label :agreement, "Agreement" %>
-    
+      <form>
+        <div class="form-group">
+          <textarea class="form-control" id="exampleFormControlTextarea1" rows="3">
+          Proident dolore do quis exercitation in esse ex aliqua deserunt consequat in duis consequat. Eu ad nisi aliqua do velit laborum eu esse voluptate culpa. Enim commodo magna amet fugiat adipisicing officia amet labore ex tempor ullamco amet. Cupidatat labore sunt commodo magna adipisicing nulla nisi laborum reprehenderit nostrud magna commodo. Dolor pariatur dolor sit irure proident nisi id. Elit elit sunt amet laborum magna veniam ut velit consequat dolore enim Lorem adipisicing.
+          Id velit minim ex pariatur ipsum mollit proident eiusmod reprehenderit veniam officia in. Laborum sint dolor cupidatat officia nisi id. Occaecat est eu id nisi velit sunt adipisicing dolor sint esse ullamco elit.Eu dolor consequat cillum irure. Cillum ut velit aliqua non magna dolor sit consequat. Aliqua irure ad cillum nostrud veniam adipisicing. Duis Lorem reprehenderit dolor dolore reprehenderit Lorem sunt fugiat velit.
+          </textarea>
+        </div>
+      </form>    
+      <p> I Agree </p>
     <%= form.check_box :agreement, id: :counselor_agreement %>
   </div>
 
   <div class="actions">
-    <%= form.submit "Submit for Verification", class: "btn btn-primary" %>
+    <%= form.submit "Submit for Verification", class: "btn btn-success", id: "signup" %>
   </div>
 <% end %>
