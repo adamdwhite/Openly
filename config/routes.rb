@@ -10,7 +10,8 @@ Rails.application.routes.draw do
   resources :sessions
   resources :account_activations
   resources :messages
-  
+  resources :chats
+
   # Serve websocket cable requests in-process
   mount ActionCable.server => '/cable'
   
@@ -32,26 +33,12 @@ Rails.application.routes.draw do
   post   '/login',   to: 'sessions#create'
   delete '/logout',  to: 'sessions#destroy'
 
-  # CLIENTS
-  root 'clients#index'
-  get '/client', to: 'clients#new'
-  post '/client', to: 'clients#create'
-  delete '/client', to: 'clients#destroy'
-
-  # COUNSELORS
-  root 'counselors#index'
-  get '/counselor', to: 'counselors#new'
-  post '/counselor', to: 'counselors#create'
-  delete '/counselor', to: 'counselors#destroy'
-
   # CHATS "Talk" 
   root 'chats#index'
-  get '/talk', to: 'chats#show'
-  get '/talk', to: 'chats#new'
+  get '/talk', to: 'chats#index'
   post '/talk', to: 'chats#create'
  
   # MESSAGES 
-  root 'messages#index'
   get '/message', to: 'messages#show'
   get '/message', to: 'messages#new'
   post '/message', to: 'messages#create'
