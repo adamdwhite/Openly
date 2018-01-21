@@ -17,12 +17,15 @@ class ChatsController < ApplicationController
     end
     redirect_to user_chat_path(current_user, @chat,  :other_user => @other_user.id) 
   end
+  
   def show
     @other_user = User.find(params[:other_user])
     @chat = Chat.find_by(id: params[:id])
     @message = Message.new
   end
 private
+
+
   def find_chat(second_user)
     chats = current_user.chats
     chats.each do |chat|
@@ -36,5 +39,5 @@ private
   end
   def require_login
     redirect_to new_session_path unless logged_in?
-  end
+  end  
 end

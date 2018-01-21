@@ -65,6 +65,16 @@ class User < ApplicationRecord
   def send_activation_email
     UserMailer.account_activation(self).deliver_now
   end
+  
+  def existing_chats_users
+    existing_chat_users = []
+    chats.each do |chat| 
+      chat.subscriptions.each do |subscription|
+         existing_chat_users << subscription.user if subscription.user != self
+      end
+    end
+      existing_chat_users
+    end
 
   private
 
@@ -78,15 +88,5 @@ class User < ApplicationRecord
     self.activation_token  = User.new_token
     self.activation_digest = User.digest(activation_token)
   end
-
-	def existing_chats_users
-		existing_chat_users = []
-		chats.each do |chat| 
-  		chat.subscriptions.each do |subscription|
-  			existing_chat_users << subscription.user if subscription.user != self
-  		end
-  	end
-  	existing_chat_users
-	end
 
 end
