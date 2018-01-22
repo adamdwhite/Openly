@@ -1,6 +1,6 @@
 <%# Submit NEW COUNSELOR application form %>
 
-<%= form_with(model: counselor, local: true) do |form| %>
+<%= form_with(model: @counselor) do |form| %>
 
 <h5>As a licensed counselor, please complete this form and submit your profile for verification. 
 <br>
@@ -22,6 +22,12 @@
       </ul>
     </div>
     <% end %>
+
+<h4> Personal & Professional Information <i class="material-icons" id="signup">help</i>
+</h4>
+<hr>
+
+
 
   <div class="field">
     <%= form.label :first_name %>
@@ -55,9 +61,11 @@
   <%# </div> %>
 
   <div class="field">
-    <%= form.label :ssn, "Social Security #" %>
+    <%= form.label :ssn, "Social Security Number" %>
     <%= form.number_field :ssn, id: :counselor_ssn %>
   </div>
+
+<i class="material-icons" id="signup">help</i>
 
   <div class="field">
     <%= form.label :occ_title, "Occupational Title" %>
@@ -74,8 +82,9 @@
     <%= form.text_field :license, id: :counselor_license %>
   </div>
 
-<h2> Payment Information </h2> 
-<i class="material-icons" id="signup">help</i>
+<hr>
+<h4> Payment Information <i class="material-icons" id="signup">help</i>
+</h4>
 <hr>
 
   <div class="field">
@@ -88,8 +97,14 @@
     <%= form.text_field :payment, id: :counselor_payment %>
   </div>
 
+<hr>
+
+<h4> Contract & Terms of Use <i class="material-icons" id="signup">help</i>
+</h4>
+<hr>
+
   <div class="field">
-    <%= form.label :agreement, "Agreement" %>
+    <%= form.label :agreement %>
       <form>
         <div class="form-group">
           <textarea class="form-control" id="exampleFormControlTextarea1" rows="3">
@@ -98,8 +113,9 @@
           </textarea>
         </div>
       </form>    
-      <p> I Agree </p>
+      <h6> I Agree
     <%= form.check_box :agreement, id: :counselor_agreement %>
+       </h6>
   </div>
 
   <div class="actions">

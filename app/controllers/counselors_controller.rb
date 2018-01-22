@@ -24,6 +24,7 @@ class CounselorsController < ApplicationController
   # POST /counselors
   # POST /counselors.json
   def create
+    byebug
     @counselor = Counselor.new(counselor_params)
     @counselor.user_id = session[:user_id]
     
