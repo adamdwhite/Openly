@@ -1,32 +1,26 @@
 class CounselorsController < ApplicationController
   before_action :set_counselor, only: [:show, :edit, :update, :destroy]
-
   # GET /counselors
   # GET /counselors.json
   def index
     @counselors = Counselor.all
   end
-
   # GET /counselors/1
   # GET /counselors/1.json
   def show
   end
-
   # GET /counselors/new
   def new
     @counselor = Counselor.new
   end
-  
   # GET /counselors/1/edit
   def edit
   end
-  
   # POST /counselors
   # POST /counselors.json
   def create
-    byebug
     @counselor = Counselor.new(counselor_params)
-    @counselor.user_id = session[:user_id]
+    @counselor.user = current_user
     
     respond_to do |format|
       if @counselor.save
@@ -38,7 +32,6 @@ class CounselorsController < ApplicationController
       end
     end
   end
-
   # PATCH/PUT /counselors/1
   # PATCH/PUT /counselors/1.json
   def update
@@ -52,7 +45,6 @@ class CounselorsController < ApplicationController
       end
     end
   end
-
   # DELETE /counselors/1
   # DELETE /counselors/1.json
   def destroy
@@ -62,15 +54,14 @@ class CounselorsController < ApplicationController
       format.json { head :no_content }
     end
   end
-
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_counselor
       @counselor = Counselor.find(params[:id])
     end
-
     # Never trust parameters from the scary internet, only allow the white list through.
     def counselor_params
-      params.require(:counselor).permit(:first_name, :last_name, :age, :sex, :zipcode, :image, :ssn, :occ_title, :string, :occ_state, :payment, :agreement)
+      params.require(:counselor).permit(:first_name, :last_name, :age, :sex, :zipcode,
+                                      :image, :ssn, :occ_title, :license, :occ_state, :payment, :agreement)
     end
 end
