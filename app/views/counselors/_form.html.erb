@@ -1,123 +1,90 @@
 <%# Submit NEW COUNSELOR application form %>
+<%= form_for(@counselor, url: counselors_path, method: :post) do |form| %>
 
-<%= form_with(model: @counselor) do |form| %>
-
-<h5>As a licensed counselor, please complete this form and submit your profile for verification. 
-<br>
-<br>This is to ensure we find you the best clients, and that our clients will receive quality, professional therapy.  
-<br>
-<br>If you have questions, please refer to the Help section. 
-</h5> 
-
-<hr> 
-
-  <% if counselor.errors.any? %>
+    <h5>As a licensed counselor, please complete this form and submit your profile for verification.
+    <br>
+    <br>This is to ensure we find you the best clients, and that our clients will receive quality, professional therapy.
+    <br>
+    <br>If you have questions, please refer to the Help section.
+    </h5>
+    <hr>
+  
+  <%# ERROR Handling for form fields  %>
+  <% if @counselor.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(counselor.errors.count, "error") %> prohibited this counselor from being saved:</h2>
-
+      <h2><%= pluralize(@counselor.errors.count, "error") %> prohibited this counselor from being saved:</h2>
       <ul>
-      <% counselor.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
+        <% @counselor.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
       </ul>
     </div>
-    <% end %>
+  <% end %>
 
-<h4> Personal & Professional Information <i class="material-icons" id="signup">help</i>
-</h4>
-<hr>
-
-
+  <hr>
+  <h4> Personal & Professional Information <i class="material-icons" id="signup">help</i>
+  </h4>
+  <hr>
 
   <div class="field">
     <%= form.label :first_name %>
     <%= form.text_field :first_name, id: :counselor_first_name %>
   </div>
-
   <div class="field">
     <%= form.label :last_name %>
     <%= form.text_field :last_name, id: :counselor_last_name %>
   </div>
-
   <div class="field">
     <%= form.label :age, "Date of Birth" %>
     <%= form.date_field :age, id: :counselor_age %>
-    <%# <a>why we need to know this...</a> %>
   </div>
-
-  <div class="field">
-    <%= form.label :gender %>
-    <%= form.select(:couselor_gender, ['Undisclosed','Male','Female','Other'], {}, { :class => 'select' })%>
-  </div>
-
   <div class="field">
     <%= form.label :zipcode %>
     <%= form.search_field :zipcode, id: :counselor_zipcode %>
   </div>
-
   <%# <div class="field"> %>
-    <%# <%= form.label :image %> 
-    <%# <%= form.text_field :image, id: :counselor_image %> 
+    <%# <%= form.label :image %>
+    <%# <%= form.text_field :image, id: :counselor_image %>
   <%# </div> %>
-
   <div class="field">
-    <%= form.label :ssn, "Social Security Number" %>
+    <%= form.label :ssn, "Social Security #" %>
     <%= form.number_field :ssn, id: :counselor_ssn %>
   </div>
-
-<i class="material-icons" id="signup">help</i>
-
   <div class="field">
     <%= form.label :occ_title, "Occupational Title" %>
     <%= form.text_field :occ_title, id: :counselor_occ_title %>
   </div>
-
   <div class="field">
     <%= form.label :occ_state, "U.S. State of License" %>
     <%= form.text_field :occ_state, id: :counselor_occ_state %>
   </div>
-
   <div class="field">
     <%= form.label :license, "License Number" %>
     <%= form.text_field :license, id: :counselor_license %>
   </div>
 
-<hr>
-<h4> Payment Information <i class="material-icons" id="signup">help</i>
-</h4>
-<hr>
-
+  <hr>
+  <h4> Payment Information <i class="material-icons" id="signup">help</i>
+  </h4>
+  <hr>  
   <div class="field">
-    <%= form.label :payment, "Payment Type"%>
-    <%= form.select(:counselor_payment, ['Visa','Mastercard','American Express','Discover', 'Other'], {}, { :class => 'select' })%>
-  </div>
-
-  <div class="field">
-    <%= form.label :license, "Account Number" %>
+    <%= form.label :payment, "Account Number" %>
     <%= form.text_field :payment, id: :counselor_payment %>
   </div>
-
-<hr>
-
-<h4> Contract & Terms of Use <i class="material-icons" id="signup">help</i>
-</h4>
-<hr>
-
+  
+  <hr>
+    <h4> Terms of Use <i class="material-icons" id="signup">help</i>
+    </h4>
+  <hr>
   <div class="field">
-    <%= form.label :agreement %>
-      <form>
-        <div class="form-group">
-          <textarea class="form-control" id="exampleFormControlTextarea1" rows="3">
-          Proident dolore do quis exercitation in esse ex aliqua deserunt consequat in duis consequat. Eu ad nisi aliqua do velit laborum eu esse voluptate culpa. Enim commodo magna amet fugiat adipisicing officia amet labore ex tempor ullamco amet. Cupidatat labore sunt commodo magna adipisicing nulla nisi laborum reprehenderit nostrud magna commodo. Dolor pariatur dolor sit irure proident nisi id. Elit elit sunt amet laborum magna veniam ut velit consequat dolore enim Lorem adipisicing.
-          Id velit minim ex pariatur ipsum mollit proident eiusmod reprehenderit veniam officia in. Laborum sint dolor cupidatat officia nisi id. Occaecat est eu id nisi velit sunt adipisicing dolor sint esse ullamco elit.Eu dolor consequat cillum irure. Cillum ut velit aliqua non magna dolor sit consequat. Aliqua irure ad cillum nostrud veniam adipisicing. Duis Lorem reprehenderit dolor dolore reprehenderit Lorem sunt fugiat velit.
-          </textarea>
-        </div>
-      </form>    
-      <h6> I Agree
+    <%= form.label :agreement, "Agreement" %>
+    <div class="form-group">
+      <p>Proident dolore do quis exercitation in esse ex aliqua deserunt consequat in duis consequat. Eu ad nisi aliqua do velit laborum eu esse voluptate culpa. Enim commodo magna amet fugiat adipisicing officia amet labore ex tempor ullamco amet. Cupidatat labore sunt commodo magna adipisicing nulla nisi laborum reprehenderit nostrud magna commodo. Dolor pariatur dolor sit irure proident nisi id. Elit elit sunt amet laborum magna veniam ut velit consequat dolore enim Lorem adipisicing.</p>
+      <p>Id velit minim ex pariatur ipsum mollit proident eiusmod reprehenderit veniam officia in. Laborum sint dolor cupidatat officia nisi id. Occaecat est eu id nisi velit sunt adipisicing dolor sint esse ullamco elit.Eu dolor consequat cillum irure. Cillum ut velit aliqua non magna dolor sit consequat. Aliqua irure ad cillum nostrud veniam adipisicing. Duis Lorem reprehenderit dolor dolore reprehenderit Lorem sunt fugiat velit.</p>
+    </div>
+    <p> I Agree </p>
     <%= form.check_box :agreement, id: :counselor_agreement %>
-       </h6>
   </div>
-
   <div class="actions">
     <%= form.submit "Submit for Verification", class: "btn btn-success", id: "signup" %>
   </div>
