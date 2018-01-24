@@ -5,7 +5,7 @@
   <div class="col-md-6 col-md-offset-3">
     <%= form_for(:user, url: signup_path) do |f| %>
     
-    <%= render 'shared/error_messages' %>
+      <%= render 'shared/error_messages' %>
 
             <%# Email/PW New %>
 
@@ -19,23 +19,22 @@
       <%= f.password_field :password_confirmation, class: 'form-control' %>
 
                 <%# Client / Counselor choice %>
-          <hr>
-        <h2>Account Type:
-          <div data-toggle="tooltip" data-placement="top" title="Please select either Client or Counselor. One Client or Counselor is permitted per each new account. If Client is selected, you may finish your Account registration and get started talking right away.
+      <hr>
+      <h2>Account Type:
+        <div data-toggle="tooltip" data-placement="top" title="Please select either Client or Counselor. One Client or Counselor is permitted per each new account. If Client is selected, you may finish your Account registration and get started talking right away.
           If Counselor is selected, your account registration will undergo a verification process.">
-            <i class="material-icons" id="signup">help_outline</i>
-          </div>
-        </h2>
+          <i class="material-icons" id="signup">help_outline</i>
+        </div>
+      </h2>
 
-        <%= f.label :is_client, 'Client' %>  
+      <%= f.label :is_client, 'Client' %>  
+      <%= f.radio_button :is_client, class: "btn btn-success"%>
+      <br>
+      <br>
+      <%= f.label :is_client, 'Counselor' %>  
         <%= f.radio_button :is_client, class: "btn btn-success"%>
-          <br>
-          <br>
-        <%= f.label :is_client, 'Counselor' %>  
-        <%= f.radio_button :is_client, class: "btn btn-success"%>
-          <hr>
-
-                <%# SUBMIT %>
+      <hr>
+          <%# SUBMIT %>
         <%= f.submit "Create My Account", class: "btn btn-success", id:"signup" %>
 
     <% end %>

@@ -12,10 +12,18 @@
    <% end %>
   <% end %>
 </ul>
-All Users:
+
+<% if current_user.is_client? %>
+  <h4>The following Counselors are currently available to talk:</h4>
+  <% else %>
+  <h4>The following Clients are currently available to talk:</h4>
+<% end %>
+  
+<hr>
+
 <ul>
   <% User.all.each do |other_user| %>
-   <% if other_user != current_user %>
+   <% if other_user != current_user && other_user.is_client? %>
      <li>
        <%= link_to(user_chats_path(current_user, :other_user => other_user.id), method: :post) do %>
        <%= other_user.email %>
@@ -24,4 +32,4 @@ All Users:
     <% end %>
   <% end %>
 </ul>
-<%= link_to "Logout", session_path(current_user.id), method: :delete  %>
+<%# <%= link_to "Logout", session_path(current_user.id), method: :delete  %> 
