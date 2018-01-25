@@ -1,6 +1,6 @@
 <%= form_with model: client, local: true do |form| %>
 
-    <h5>Create your Client Profile to begin talking with a Counselor. 
+    <h5>Create your Client Profile to begin talking with a Counselor.
     </h5>
 
     <%# ERROR handling for form fields  %>
@@ -19,7 +19,8 @@
         <hr>
         <h4> Personal & Professional Information <i class="material-icons" id="signup">help</i>
         </h4>
-        <hr>
+        <br>
+
 
       <div class="field">
         <%= form.label :first_name %>
@@ -54,7 +55,7 @@
         <hr>
         <h4> Payment Information <i class="material-icons" id="signup">help</i>
         </h4>
-        <hr>
+        <br>
 
       <div class="field">
         <%= form.label :payment, "Payment Type"%>
@@ -66,26 +67,24 @@
         <%= form.text_field :payment, id: :client_payment %>
       </div>
 
-
         <hr>
         <h4> Terms of Use <i class="material-icons" id="signup">help</i>
         </h4>
-        <hr>
+        <br>
 
       <div class="field">
-        <%= form.label :agreement, "Agreement" %>
             <div class="form-group">
               <textarea class="form-control" id="exampleFormControlTextarea1" rows="3">
               Proident dolore do quis exercitation in esse ex aliqua deserunt consequat in duis consequat. Eu ad nisi aliqua do velit laborum eu esse voluptate culpa. Enim commodo magna amet fugiat adipisicing officia amet labore ex tempor ullamco amet. Cupidatat labore sunt commodo magna adipisicing nulla nisi laborum reprehenderit nostrud magna commodo. Dolor pariatur dolor sit irure proident nisi id. Elit elit sunt amet laborum magna veniam ut velit consequat dolore enim Lorem adipisicing.
               Id velit minim ex pariatur ipsum mollit proident eiusmod reprehenderit veniam officia in. Laborum sint dolor cupidatat officia nisi id. Occaecat est eu id nisi velit sunt adipisicing dolor sint esse ullamco elit.Eu dolor consequat cillum irure. Cillum ut velit aliqua non magna dolor sit consequat. Aliqua irure ad cillum nostrud veniam adipisicing. Duis Lorem reprehenderit dolor dolore reprehenderit Lorem sunt fugiat velit.
               </textarea>
             </div>
-          <p> I Agree </p>
+        <%= form.label :agreement, "I Agree"%>
         <%= form.check_box :agreement, id: :client_agreement %>
       </div>
 
       <div class="actions">
       <%= form.submit  class: 'btn btn-success', id:"signup"%>
       </div>
-  
+
 <% end %>

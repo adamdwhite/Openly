@@ -1,10 +1,10 @@
-<%# NAVBAR Contents %>  
+<%# NAVBAR Contents %>
 <nav class="d-flex navbar navbar-expand-lg navbar-light" id="topnav">
 
   <%# LOGO TITLE, left-align %>
   <a class="navbar-brand" id="icon_logo">
     <%= link_to "Openly", about_path, id: "logo" %>
-    <%# <%= image_tag('openly-logo-2 (1).png')%> 
+    <%# <%= image_tag('openly-logo-2 (1).png')%>
   </a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon">
@@ -14,55 +14,68 @@
   <%# Right-floated NAV sections, hamburger-response %>
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
-            
+
 <%# HELP Sub NAV %>
       <li class="nav-item active">
           <%= link_to "Help", help_path, id: "help"%>
       </li>
-          
+
 <%# if logged in as ADMIN %>
       <%# <li><%= link_to "Users", users_path %>
-      <%# </li> %> 
-  
-<% if logged_in? %>          
+      <%# </li> %>
+
+<% if logged_in? %>
 
 <%# TALK Sub Nav %>
       <li class="nav-item active">
-           <%= link_to "Talk", talk_path, id: "talk"%>
+        <%= link_to "Talk", talk_path, id: "talk"%>
       </li>
 
 
 <%# ACCOUNT Sub Nav %>
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" id="account">
-            Account 
+            Account
         </a>
 
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
 
-<%# If current user is a client, they cannot see any Counselor info, and vise-versa:  %>
-<% if current_user.is_client? %>
+  <%# If current user is a client, they cannot see any Counselor info, and vise-versa:  %>
+  <% if current_user.is_client? %>
 
-<%# CLIENT Profile %>
-          <a class="dropdown-item">
-          <%= link_to "Client Profile", new_client_path, id: "client"%>
-          </a>              
+    <%# CLIENT Profile %>
+        <%# Present NEW FORM or EDIT, based on history %>
+          <% if @client.created_at == nil %>
+            <a class="dropdown-item">
+            <%= link_to "New Client Profile", new_client_path, id: "client"%>
+            </a>
+          <% else %>
+            <a class="dropdown-item">
+            <%= link_to "Edit Client Profile", edit_client_path, id: "client"%>
+            </a>
+          <% end %>
+    <% else %>
 
-<% else %>          
-
-<%# COUNSELOR Profile %>
-          <a class="dropdown-item">
-          <%= link_to "Counselor Profile", new_counselor_path, id: "counselor"%>
-          </a>  
-<% end %>
+    <%# COUNSELOR Profile %>
+        <%# Present NEW FORM or EDIT, based on history %>
+          <% if @counselor.created_at == nil %>
+            <a class="dropdown-item">
+            <%= link_to "New Counselor Profile", new_counselor_path, id: "counselor"%>
+            </a>
+          <% else %>
+            <a class="dropdown-item">
+            <%= link_to "Edit Counselor Profile", edit_counselor_path, id: "counselor"%>
+            </a>
+          <% end %>
+  <% end %>
 
 <%# SETTINGS - Application %>
-          <a class="dropdown-item">              
+          <a class="dropdown-item">
           <%= link_to "Settings", edit_user_path(current_user), id: "settings"%>
-          </a>               
+          </a>
             <div class="dropdown-divider"></div>
 <%# LOGOUT %>
-          <a class="dropdown-item">                        
+          <a class="dropdown-item">
           <%= link_to "Log out", logout_path, method: :delete, id: "logout"%>
           </a>
         </div>
@@ -70,11 +83,11 @@
 
 <% else %>
 <%# LOGIN %>
-      <li class="nav-item active"> 
+      <li class="nav-item active">
       <%= link_to "| Log In", login_path, id: "login" %>
       </li>
-<% end %> 
+<% end %>
 
     </ul>
-  </div> 
+  </div>
 </nav>
