@@ -41,30 +41,30 @@
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
 
   <%# If current user is a client, they cannot see any Counselor info, and vise-versa:  %>
+
   <% if current_user.is_client? %>
 
     <%# CLIENT Profile %>
         <%# Present NEW FORM or EDIT, based on history %>
-          <% if @client.created_at == nil %>
-            <a class="dropdown-item">
-            <%= link_to "New Client Profile", new_client_path, id: "client"%>
-            </a>
-          <% else %>
+          <% if @client.try(:id) %>
             <a class="dropdown-item">
             <%= link_to "Edit Client Profile", edit_client_path, id: "client"%>
             </a>
+          <% else %>
+            <a class="dropdown-item">
+            <%= link_to "New Client Profile", new_client_path, id: "client"%>
+            </a>
           <% end %>
     <% else %>
-
     <%# COUNSELOR Profile %>
         <%# Present NEW FORM or EDIT, based on history %>
-          <% if @counselor.created_at == nil %>
+          <% if @counselor.try(:id) %>
             <a class="dropdown-item">
-            <%= link_to "New Counselor Profile", new_counselor_path, id: "counselor"%>
+            <%= link_to "Edit Counselor Profile", edit_counselor_path, id: "counselor"%>
             </a>
           <% else %>
             <a class="dropdown-item">
-            <%= link_to "Edit Counselor Profile", edit_counselor_path, id: "counselor"%>
+            <%= link_to "New Counselor Profile", new_counselor_path, id: "counselor"%>
             </a>
           <% end %>
   <% end %>

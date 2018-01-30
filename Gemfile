@@ -19,13 +19,13 @@ gem 'uglifier', '>= 1.3.0'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 gem 'jquery-rails'
-# Tether 
+# Tether
 gem 'tether-rails'
 # Bootstrap
 gem 'bootstrap-sass'
-# 
+#
 gem 'bootstrap', '~> 4.0.0.beta3'
-# 
+#
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
@@ -42,18 +42,21 @@ gem 'faker', '1.7.3'
 gem 'will_paginate',           '3.1.6'
 gem 'bootstrap-will_paginate', '1.0.0'
 
-# Converts all alert popup dialogs into Bootstrap modals 
+# Converts all alert popup dialogs into Bootstrap modals
 gem 'data-confirm-modal'
+
+# better errors
+gem 'better_errors'
 
 # Development Dependencies for CARRIERWAVE:
 # gem 'rmagick'
-# gem 'cucumber' 
-# gem 'fog' 
-# gem 'generator_spec' 
-# gem 'mini_magick' 
+# gem 'cucumber'
+# gem 'fog'
+# gem 'generator_spec'
+# gem 'mini_magick'
 # gem 'pry'
 # gem 'timecop'
-# gem 'webmock' 
+# gem 'webmock'
 
 # Runtime Dependencies for CARRIERWAVE:
 # gem 'activemodel'
@@ -64,13 +67,13 @@ gem 'data-confirm-modal'
 # gem 'carrierwave'
 
 
-# AUTHorization using CanCanCan - Note: RoR 5 uses CanCanCan and not CanCan (v4). 
+# AUTHorization using CanCanCan - Note: RoR 5 uses CanCanCan and not CanCan (v4).
 # Development Dependencies
-gem 'appraisal' 
-gem 'bundler' 
-gem 'rake' 
+gem 'appraisal'
+gem 'bundler'
+gem 'rake'
 gem 'rspec'
-gem 'rubocop' 
+gem 'rubocop'
 
 # CanCanCAn
 gem 'cancancan'

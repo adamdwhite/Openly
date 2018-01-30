@@ -1,35 +1,54 @@
 <%# CHAT index view %>
+<%# identify unique parties for each sessioned chat %>
+<h4>Talking with:</h4>
+<hr>
 <ul>
- <% if @existing_chats_users %>
-   <% @existing_chats_users.each do |other_user| %>
+<% if @existing_chats_users %>
+  <% @existing_chats_users.each do |other_user| %>
     <% if other_user != current_user %>
       <li>
         <%= link_to(user_chats_path(current_user, :other_user => other_user.id), method: :post) do %>
         <%= other_user.email %>
         <% end %>
       </li>
-     <% end %>
-   <% end %>
-  <% end %>
-</ul>
-
-<% if current_user.is_client? %>
-  <h4>The following Counselors are currently available to talk:</h4>
-  <% else %>
-  <h4>The following Clients are currently available to talk:</h4>
-<% end %>
-  
-<hr>
-
-<ul>
-  <% User.all.each do |other_user| %>
-   <% if other_user != current_user && other_user.is_client? %>
-     <li>
-       <%= link_to(user_chats_path(current_user, :other_user => other_user.id), method: :post) do %>
-       <%= other_user.email %>
-       <% end %>
-     </li>
+      <hr>
     <% end %>
   <% end %>
+<% end %>
 </ul>
-<%# <%= link_to "Logout", session_path(current_user.id), method: :delete  %> 
+<hr>
+<%# Counselors only see available Clients and vise-versa. %>
+
+<% if current_user.is_client? %>
+  <h4>Counselors available to talk:</h4>
+  <hr>
+  <ul>
+    <% User.all.each do |other_user| %>
+      <% if other_user != current_user && !other_user.is_client? %>
+        <li>
+          <div>
+          <%= link_to(user_chats_path(current_user, :other_user => other_user.id), method: :post) do %>
+          <%= other_user.email %>
+          </div>
+          <hr>
+        </li>
+        <% end %>
+      <% end %>
+    <% end %>
+  </ul>
+<% else %>
+  <h4>Clients available to talk:</h4>
+  <hr>
+  <ul>
+    <% User.all.each do |other_user| %>
+      <% if other_user != current_user && other_user.is_client? %>
+        <li>
+          <%= link_to(user_chats_path(current_user, :other_user => other_user.id), method: :post) do %>
+          <%= other_user.email %>
+          <hr>
+        </li>
+        <% end %>
+      <% end %>
+    <% end %>
+  </ul>
+<% end %>
