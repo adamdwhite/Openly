@@ -15,13 +15,14 @@ class CounselorsController < ApplicationController
   end
   # GET /counselors/1/edit
   def edit
+    @counselor = User.find(params[:id])
   end
   # POST /counselors
   # POST /counselors.json
   def create
     @counselor = Counselor.new(counselor_params)
-    @counselor.user = current_user
-    
+    @counselor.user_id = current_user
+
     respond_to do |format|
       if @counselor.save
         format.html { redirect_to @counselor, notice: 'Thank you for submitting your application to become a Counselor. We will notify you via email once your submission has been reviewed.' }

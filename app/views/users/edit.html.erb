@@ -1,9 +1,9 @@
 <% provide(:title, "Edit User") %>
 <% provide(:button_text, 'Save changes') %>
 
-<h1>Update your profile</h1>
+<h1>Edit your profile</h1>
 
-<%# Update EMAIL / PW %>
+<%# EDIT form for EMAIL / PW / Gravatar %>
 
 <div class="row">
   <div class="col-md-6 col-md-offset-3">
@@ -21,17 +21,19 @@
 
       <hr>
       <h2>Account Type:</h2>
-      <p> You may not change your account type here. Each Client and Counselor has their own account. So, if you would like to create a new account of a different type, please log out and follow the prompts to "Sign Up". 
+      <p> You may not change your account type here. Each Client and Counselor has their own account. So, if you would like to create a new account of a different type, please log out and follow the prompts to "Sign Up".
       <hr>
-    
+
       <div class="gravatar_edit">
         <%= gravatar_for @user %>
         <a href="http://gravatar.com/emails" target="_blank"><br>Change Image</a>
       </div>
       <hr>
-      <%= f.submit "Save changes", class: "btn btn-primary", id: "signup"%>
+      <br>
+      <%= f.submit "Save Changes", class: "btn btn-primary", id: "signup"%>
     <% end %>
   </div>
 </div>
 
-<%= link_to 'Back', users_path, id: "backbtn" %>
+<br>
+<%= link_to 'Cancel', @user , id: "backbtn" %>
