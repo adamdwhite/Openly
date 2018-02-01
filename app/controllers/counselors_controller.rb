@@ -21,7 +21,6 @@ class CounselorsController < ApplicationController
   # POST /counselors.json
   def create
     @counselor = Counselor.new(counselor_params)
-    @counselor.user_id = current_user
 
     respond_to do |format|
       if @counselor.save
