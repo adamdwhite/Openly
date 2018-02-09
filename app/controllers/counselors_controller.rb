@@ -15,13 +15,14 @@ class CounselorsController < ApplicationController
   end
   # GET /counselors/1/edit
   def edit
+    @counselor = Counselor.find_by(params[:id])
   end
   # POST /counselors
   # POST /counselors.json
   def create
     @counselor = Counselor.new(counselor_params)
-    @counselor.user = current_user
-    
+    @counselor = current_user
+
     respond_to do |format|
       if @counselor.save
         format.html { redirect_to @counselor, notice: 'Thank you for submitting your application to become a Counselor. We will notify you via email once your submission has been reviewed.' }
@@ -57,11 +58,10 @@ class CounselorsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_counselor
-      @counselor = Counselor.find(params[:id])
+      @counselor = Counselor.find_by(params[:id])
     end
     # Never trust parameters from the scary internet, only allow the white list through.
     def counselor_params
-      params.require(:counselor).permit(:first_name, :last_name, :age, :sex, :zipcode,
-                                      :image, :ssn, :occ_title, :license, :occ_state, :payment, :agreement)
+      params.require(:counselor).permit(:first_name, :last_name, :age, :sex, :zipcode, :image, :ssn, :occ_title, :license, :occ_state, :payment, :agreement, :user_id)
     end
 end

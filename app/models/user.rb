@@ -4,13 +4,16 @@ class User < ApplicationRecord
   has_many :subscriptions
   has_many :chats, through: :subscriptions
 
+  has_one :client
+  has_one :counselor
+
   attr_accessor :remember_token, :activation_token, :reset_token
 
   # Definitions in PRIVATE
   before_save   :downcase_email
   # before_create :create_activation_digest
-  
-  
+
+
   # Email and Password Validation
   has_secure_password
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
@@ -19,12 +22,10 @@ class User < ApplicationRecord
                     uniqueness: {case_sensitive: false}
   validates :password, presence: true, length: { minimum: 6 }, allow_nil: true
 
-  # Terms of service
-  validates :terms_of_service, acceptance: true
-    
-  # Account type Client / Counselor 
+
+  # Account type Client / Counselor
   # validates :is_client, presence: true, allow_nil: false
-  
+
   # Returns the hash digest of the given string.
   def User.digest(string)
     cost = ActiveModel::SecurePassword.min_cost ? BCrypt::Engine::MIN_COST :
@@ -65,12 +66,12 @@ class User < ApplicationRecord
   def send_activation_email
     UserMailer.account_activation(self).deliver_now
   end
-  
+
   def existing_chats_users
     existing_chat_users = []
-    chats.each do |chat| 
+    chats.each do |chat|
       chat.subscriptions.each do |subscription|
-         existing_chat_users << subscription.user if subscription.user != self
+        existing_chat_users << subscription.user if subscription.user != self
       end
     end
       existing_chat_users

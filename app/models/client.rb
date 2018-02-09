@@ -1,7 +1,11 @@
 class Client < ApplicationRecord
 
-  belongs_to :user
+  has_one :user_id
   has_one :chat
+
+
+  # Terms of service
+  validates :agreement, acceptance: true
 
   enum gender: [:undisclosed, :female, :male, :other]
 

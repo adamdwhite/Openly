@@ -1,3 +1,4 @@
+
 <%# NAVBAR Contents %>
 <nav class="d-flex navbar navbar-expand-lg navbar-light" id="topnav">
 
@@ -15,24 +16,23 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
 
-<%# HELP Sub NAV %>
+  <%# HELP Sub NAV %>
       <li class="nav-item active">
           <%= link_to "Help", help_path, id: "help"%>
       </li>
 
-<%# if logged in as ADMIN %>
+  <%# if logged in as ADMIN %>
       <%# <li><%= link_to "Users", users_path %>
       <%# </li> %>
 
 <% if logged_in? %>
 
-<%# TALK Sub Nav %>
+  <%# TALK Sub Nav %>
       <li class="nav-item active">
         <%= link_to "Talk", talk_path, id: "talk"%>
       </li>
 
-
-<%# ACCOUNT Sub Nav %>
+  <%# ACCOUNT Sub Nav %>
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" id="account">
             Account
@@ -46,9 +46,9 @@
 
     <%# CLIENT Profile %>
         <%# Present NEW FORM or EDIT, based on history %>
-          <% if @client.try(:id) %>
+          <% if @client.present? %>
             <a class="dropdown-item">
-            <%= link_to "Edit Client Profile", edit_client_path, id: "client"%>
+            <%= link_to "Edit Client Profile", edit_client_path(current_user.id), id: "client"%>
             </a>
           <% else %>
             <a class="dropdown-item">
@@ -58,9 +58,9 @@
     <% else %>
     <%# COUNSELOR Profile %>
         <%# Present NEW FORM or EDIT, based on history %>
-          <% if @counselor.try(:id) %>
+          <% if @counselor.present? %>
             <a class="dropdown-item">
-            <%= link_to "Edit Counselor Profile", edit_counselor_path, id: "counselor"%>
+            <%= link_to "Edit Counselor Profile", edit_counselor_path(current_user.id), id: "counselor"%>
             </a>
           <% else %>
             <a class="dropdown-item">
@@ -69,12 +69,12 @@
           <% end %>
   <% end %>
 
-<%# SETTINGS - Application %>
+  <%# SETTINGS - Application %>
           <a class="dropdown-item">
           <%= link_to "Settings", edit_user_path(current_user), id: "settings"%>
           </a>
             <div class="dropdown-divider"></div>
-<%# LOGOUT %>
+  <%# LOGOUT %>
           <a class="dropdown-item">
           <%= link_to "Log out", logout_path, method: :delete, id: "logout"%>
           </a>
@@ -82,10 +82,11 @@
       </li>
 
 <% else %>
-<%# LOGIN %>
+  <%# LOGIN %>
       <li class="nav-item active">
       <%= link_to "| Log In", login_path, id: "login" %>
       </li>
+
 <% end %>
 
     </ul>
