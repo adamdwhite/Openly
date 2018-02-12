@@ -1,5 +1,8 @@
 <p id="notice"><%= notice %></p>
 
+<h3> Your Client Profile: </h3>
+<hr>
+
 <p>
   <strong>First name:</strong>
   <%= @client.first_name %>
@@ -13,6 +16,11 @@
 <p>
   <strong>Age:</strong>
   <%= @client.age %>
+</p>
+
+<p>
+  <strong>Gender:</strong>
+  <%= @client.gender %>
 </p>
 
 <p>
@@ -31,9 +39,16 @@
 <%# </p>  %>
 
 <p>
-  <strong>Payment:</strong>
+  <strong>Payment Type:</strong>
   <%= @client.payment %>
 </p>
 
-<%= link_to 'Edit', edit_client_path(@client), id: "editbtn" %> |
-<%= link_to 'Back', clients_path, id: "backbtn" %>
+<p>
+  <strong>Card Number:</strong>
+  <%= @client.payment %>
+</p>
+
+<hr>
+
+<%= link_to 'Edit', edit_client_path(@client), id: "editbtn" %>
+<%# link_to 'Back', '#', id: "backbtn" %>

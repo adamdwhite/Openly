@@ -62,6 +62,6 @@ class CounselorsController < ApplicationController
     end
     # Never trust parameters from the scary internet, only allow the white list through.
     def counselor_params
-      params.require(:counselor).permit(:first_name, :last_name, :age, :sex, :zipcode, :image, :ssn, :occ_title, :license, :occ_state, :payment, :agreement, :user_id)
+      params.fetch(:counselor, {}).permit(:first_name, :last_name, :age, :sex, :zipcode, :image, :ssn, :occ_title, :license, :occ_state, :payment, :agreement, :user_id)
     end
 end

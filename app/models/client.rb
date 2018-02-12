@@ -1,6 +1,6 @@
 class Client < ApplicationRecord
 
-  has_one :user_id
+  has_one :user_id, through: :user
   has_one :chat
 
 

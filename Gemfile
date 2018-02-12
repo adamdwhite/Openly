@@ -45,6 +45,9 @@ gem 'bootstrap-will_paginate', '1.0.0'
 # Converts all alert popup dialogs into Bootstrap modals
 gem 'data-confirm-modal'
 
+# to enable the REPL and local/instance variable inspection.
+gem 'binding_of_caller'
+
 # better errors
 gem 'better_errors'
 

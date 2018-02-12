@@ -1,6 +1,4 @@
-<h1>Counselor Application</h1>
-
-<%= render 'form', counselor: @counselor %>
+<h1>New Counselor Application</h1>
 
     <h5>As a licensed counselor, please complete this form and submit your profile for verification.
     <br>
@@ -10,5 +8,6 @@
     </h5>
     <hr>
 
-<%= link_to 'Back', counselors_path %> |
-<%= link_to 'Cancel', user: @current_user %>
+<%= render 'form', counselor: @counselor %>
+
+<%= link_to 'Cancel', @user %>
