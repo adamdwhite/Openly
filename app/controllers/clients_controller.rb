@@ -9,7 +9,7 @@ class ClientsController < ApplicationController
 
   # GET /clients/1
   # GET /clients/1.json
-  def show  
+  def show
   end
 
   # GET /clients/new
@@ -19,13 +19,13 @@ class ClientsController < ApplicationController
 
   # GET /clients/1/edit
   def edit
+    @client = Client.find(params[:id])
   end
 
   # POST /clients
   # POST /clients.json
   def create
     @client = Client.new(client_params)
-    @client.user_id = session[:user_id]
 
     respond_to do |format|
       if @client.save
