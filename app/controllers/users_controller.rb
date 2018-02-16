@@ -3,6 +3,8 @@ class UsersController < ApplicationController
   before_action :correct_user,   only: [:edit, :update]
   before_action :admin_user,     only: :destroy
 
+
+
   # GET /users
   # GET /users.json
   def index
@@ -34,7 +36,7 @@ class UsersController < ApplicationController
           @user.toggle(:is_client)
       elsif params[:commit] == 'Counselor'
           @user.is_client = false
-      end 
+      end
 
       if @user.save
         log_in @user
@@ -63,7 +65,7 @@ class UsersController < ApplicationController
   def destroy
     User.find(params[:id]).destroy
     flash[:success] = "User was successfully deleted"
-    redirect_to users_url
+    redirect_to root_url
   end
 
   private
@@ -73,10 +75,10 @@ class UsersController < ApplicationController
   def set_user
     @user = User.find(params[:id])
   end
-  
 
-# PARAMS 
-  def user_params   
+
+# PARAMS
+  def user_params
     params.require(:user).permit(:email, :password, :is_client)
   end
 

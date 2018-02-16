@@ -1,82 +1,73 @@
 <%# NAVBAR Contents %>
 <nav class="d-flex navbar navbar-expand-lg navbar-light" id="topnav">
-  <%# LOGO TITLE, left-align %>
+  <%# LOGO TITLE, left-floated %>
   <a class="navbar-brand" id="icon_logo">
-    <%= link_to "Openly", about_path, id: "logo" %>
-    <%# <%= image_tag('openly-logo-2 (1).png')%>
+  <%= link_to "Openly", about_path, id: "logo" %>
   </a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon">
-    </span>
-  </button>
-  <%# Right-floated NAV sections, hamburger-response %>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon">
+      </span>
+    </button>
+  <%# All Right-floated NAVBAR Sections, hamburger-collapse %>
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
-  <%# HELP Sub NAV %>
+      <%# HELP Sub NAV - Always Show %>
       <li class="nav-item active">
-          <%= link_to "Help", help_path, id: "help"%>
+      <%= link_to "Help", help_path, id: "help"%>
       </li>
-  <%# if logged in as ADMIN %>
-      <%# <li><%= link_to "Users", users_path %>
-      <%# </li> %>
-<% if logged_in? %>
-  <%# TALK Sub Nav %>
-      <li class="nav-item active">
+      <% if logged_in? %>
+        <%# TALK Sub Nav %>
+        <li class="nav-item active">
         <%= link_to "Talk", talk_path, id: "talk"%>
-      </li>
-  <%# ACCOUNT Sub Nav %>
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" id="account">
-            Account
-        </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-  <%# If current user is a client, they cannot see any Counselor info, and vise-versa:  %>
-  <% if current_user.is_client? %>
-    <%# CLIENT Profile %>
-        <%# Present NEW FORM or EDIT, based on history %>
-          <% if !Client.where(:user_id == current_user.id).empty? %>
-            <a class="dropdown-item">
-            <%= link_to "Edit Client Profile", edit_client_path(Client.find_by(:user_id == current_user.id).id), id: "client"%>
-            </a>
-          <% else %>
-            <a class="dropdown-item">
-            <%= link_to "New Client Profile", new_client_path, id: "client"%>
-            </a>
-          <% end %>
-    <% else %>
-    <%# COUNSELOR Profile %>
-        <%# Present NEW FORM or EDIT, based on history %>
-          <% if !Counselor.where(:user_id == current_user.id).empty? %>
-            <a class="dropdown-item">
-            <%= link_to "Edit Counselor Profile", edit_counselor_path(Counselor.find_by(:user_id == current_user.id).id), id: "counselor"%>
-            </a>
-          <% else %>
-            <a class="dropdown-item">
-            <%= link_to "New Counselor Profile", new_counselor_path, id: "counselor"%>
-            </a>
-          <% end %>
-  <% end %>
-
-  <%# SETTINGS - Application %>
-          <a class="dropdown-item">
-          <%= link_to "Settings", edit_user_path(current_user), id: "settings"%>
+        </li>
+        <%# ACCOUNT Sub Nav %>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" id="account"> Account
           </a>
-            <div class="dropdown-divider"></div>
-  <%# LOGOUT %>
-          <a class="dropdown-item">
-          <%= link_to "Log out", logout_path, method: :delete, id: "logout"%>
-          </a>
-        </div>
-      </li>
-
-<% else %>
-  <%# LOGIN %>
-      <li class="nav-item active">
-      <%= link_to "| Log In", login_path, id: "login" %>
-      </li>
-
-<% end %>
-
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <%# If current user is a client, they cannot see any Counselor info, and vise-versa:  %>
+          <% if current_user.is_client? %>
+            <%# CLIENT Profile %>
+            <%# Present NEW FORM or EDIT, based on history %>
+            <% if @client.try(:id) %>
+              <a class="dropdown-item">
+            <%= link_to "Edit Client Profile", edit_client_path(@client), id: "client"%>
+              </a>
+            <% else %>
+              <a class="dropdown-item">
+              <%= link_to "New Client Profile", new_client_path, id: "client"%>
+              </a>
+            <% end %>
+          <% else %>
+            <%# COUNSELOR Profile %>
+            <%# Present NEW FORM or EDIT, based on history %>
+            <% if !Counselor.where(:user_id == current_user.id).empty? %>
+              <a class="dropdown-item">
+              <%= link_to "Edit Counselor Profile", edit_counselor_path(@counselor), id: "counselor"%>
+              </a>
+            <% else %>
+              <a class="dropdown-item">
+              <%= link_to "New Counselor Profile", new_counselor_path, id: "counselor"%>
+              </a>
+            <% end %>
+          <% end %>
+            <%# SETTINGS - Application %>
+            <a class="dropdown-item">
+              <%= link_to "Settings", edit_user_path(current_user), id: "settings"%>
+            </a>
+            <div class="dropdown-divider">
+            </div>
+            <%# LOGOUT %>
+            <a class="dropdown-item">
+              <%= link_to "Log out", logout_path, method: :delete, id: "logout"%>
+            </a>
+        </li>
+      <% else %>
+        <%# LOGIN %>
+        <li class="nav-item active">
+          <%= link_to "| Log In", login_path, id: "login" %>
+        </li>
+      <% end %>
     </ul>
   </div>
 </nav>

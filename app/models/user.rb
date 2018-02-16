@@ -4,12 +4,10 @@ class User < ApplicationRecord
   has_many :subscriptions
   has_many :chats, through: :subscriptions
 
-  has_one :client
-  has_one :counselor
 
   attr_accessor :remember_token, :activation_token, :reset_token
 
-  # Definitions in PRIVATE
+  # Definitions in PRIVATE section
   before_save   :downcase_email
   # before_create :create_activation_digest
 
