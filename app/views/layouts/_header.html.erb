@@ -29,9 +29,9 @@
           <% if current_user.is_client? %>
             <%# CLIENT Profile %>
             <%# Present NEW FORM or EDIT, based on history %>
-            <% if @client.try(:id) %>
+            <% if !Client.where(user_id: current_user.id).empty? %>
               <a class="dropdown-item">
-            <%= link_to "Edit Client Profile", edit_client_path(@client), id: "client"%>
+            <%= link_to "Edit Client Profile", edit_client_path(Client.where(user_id: current_user.id)), id: "client"%>
               </a>
             <% else %>
               <a class="dropdown-item">
@@ -41,9 +41,9 @@
           <% else %>
             <%# COUNSELOR Profile %>
             <%# Present NEW FORM or EDIT, based on history %>
-            <% if !Counselor.where(:user_id == current_user.id).empty? %>
+            <% if !Counselor.where(user_id: current_user.id).empty? %>
               <a class="dropdown-item">
-              <%= link_to "Edit Counselor Profile", edit_counselor_path(@counselor), id: "counselor"%>
+              <%= link_to "Edit Counselor Profile", edit_counselor_path(Counselor.where(user_id: current_user.id)), id: "counselor"%>
               </a>
             <% else %>
               <a class="dropdown-item">

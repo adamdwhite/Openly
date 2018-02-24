@@ -4,65 +4,72 @@
 <h3> Your Counselor Profile: </h3>
 <hr>
 
+<%= @counselor.each do |cou|%>
+
 <p>
   <strong>First Name:</strong>
-  <%= @counselor.first_name %>
+  <%= cou.first_name %>
 </p>
 
 <p>
   <strong>Last Name:</strong>
-  <%= @counselor.last_name %>
+  <%= cou.last_name %>
 </p>
 
 <p>
   <strong>Age:</strong>
-  <%= @counselor.age %>
+  <%= cou.age %>
 </p>
 
 <p>
   <strong>Gender:</strong>
-  <%= @counselor.gender %>
+  <%= cou.gender %>
 </p>
 
 <p>
   <strong>Zipcode:</strong>
-  <%= @counselor.zipcode %>
+  <%= cou.zipcode %>
 </p>
 
 <p>
   <strong>Image:</strong>
-  <%= @counselor.image %>
+  <%= cou.image %>
 </p>
 
 <p>
   <strong>Social Security Number:</strong>
-  <%= @counselor.ssn %>
+  <%= cou.ssn %>
 </p>
 
 <p>
   <strong>Occupational Title:</strong>
-  <%= @counselor.occ_title %>
+  <%= cou.occ_title %>
 </p>
 <p>
 <strong>U.S. State of License:</strong>
-<%= @counselor.occ_state %>
+<%= cou.occ_state %>
 </p>
 
 <p>
 <strong>License Number:</strong>
-<%= @counselor.license %>
+<%= cou.license %>
 </p>
 
 <p>
-<strong>Payment:</strong>
-<%= @counselor.payment %>
+<strong>Payment Type:</strong>
+<%= cou.payment_type %>
+</p>
+
+<p>
+<strong>Card Number:</strong>
+<%= cou.payment %>
 </p>
 
 <p>
 <strong>Agreement:</strong>
-<%= @counselor.agreement %>
+<%= cou.agreement %>
 </p>
 
 <hr>
-
-<%= link_to 'Edit', edit_counselor_path(@counselor), id: "editbtn" %>
+<% end %>
+<%#= link_to 'Edit', edit_counselor_path(@counselor), id: "editbtn" %>

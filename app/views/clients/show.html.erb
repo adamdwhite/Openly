@@ -1,54 +1,57 @@
 <p id="notice"><%= notice %></p>
 
+
 <h3> Your Client Profile: </h3>
 <hr>
 
+<%= @client.each do |c|%>
+
 <p>
   <strong>First name:</strong>
-  <%= @client.first_name %>
+  <%= c.first_name %>
 </p>
 
 <p>
   <strong>Last name:</strong>
-  <%= @client.last_name %>
+  <%= c.last_name %>
 </p>
 
 <p>
   <strong>Age:</strong>
-  <%= @client.age %>
+  <%= c.age %>
 </p>
 
 <p>
   <strong>Gender:</strong>
-  <%= @client.gender %>
+  <%= c.gender %>
 </p>
 
 <p>
   <strong>Zipcode:</strong>
-  <%= @client.zipcode %>
+  <%= c.zipcode %>
 </p>
 
 <p>
   <strong>Alias:</strong>
-  <%= @client.alias %>
+  <%= c.alias %>
 </p>
 
 <%# <p>
   <strong>Image:</strong>
-  <%= @client.image %>
+  <%= c.image %>
 <%# </p>  %>
 
 <p>
   <strong>Payment Type:</strong>
-  <%= @client.payment %>
+  <%= c.payment %>
 </p>
 
 <p>
   <strong>Card Number:</strong>
-  <%= @client.payment %>
+  <%= c.payment %>
 </p>
 
 <hr>
-
-<%= link_to 'Edit', edit_client_path(@client), id: "editbtn" %>
+<% end %>
+<%#= link_to 'Edit', edit_client_path(@client), id: "editbtn" %>
 <%# link_to 'Back', '#', id: "backbtn" %>
